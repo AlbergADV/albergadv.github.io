@@ -44,9 +44,9 @@ p{margin:0}
 /* barra alta */
 html{scroll-padding-top:90px}
 .barra{position:sticky;top:0;z-index:30;border-bottom:1px solid var(--bordo);background:#fff}
-.barra .w{display:flex;align-items:center;justify-content:space-between;
+.barra > .w{display:flex;align-items:center;justify-content:space-between;
           padding-block:16px;gap:16px;flex-wrap:wrap}
-.barra-solo-logo .w{justify-content:center}
+.barra-solo-logo > .w{justify-content:center}
 .logo{display:block;height:34px;width:auto}
 
 .nav{display:flex;align-items:center;gap:0;margin-inline:auto}
@@ -77,11 +77,12 @@ html{scroll-padding-top:90px}
      transition:max-height 260ms ease-out}
 .nav-mobile.is-open{max-height:480px;border-bottom:1px solid var(--bordo)}
 .nav-mobile .w{display:flex;flex-direction:column}
-.nav-mobile a{display:block;padding:14px 0;font-family:var(--sans);font-size:16px;
+.nav-mobile a:not(.btn){display:block;padding:14px 0;font-family:var(--sans);font-size:16px;
      color:var(--titolo);text-decoration:none;border-top:1px solid var(--bordo)}
-.nav-mobile a:first-child{border-top:0}
-.nav-mobile a:hover,.nav-mobile a:focus-visible{color:var(--ottone)}
-.nav-mobile a:focus-visible{outline:2px solid var(--ottone);outline-offset:-2px}
+.nav-mobile a:not(.btn):first-child{border-top:0}
+.nav-mobile a:not(.btn):hover,.nav-mobile a:not(.btn):focus-visible{color:var(--ottone)}
+.nav-mobile a:not(.btn):focus-visible{outline:2px solid var(--ottone);outline-offset:-2px}
+.nav-mobile .btn{margin-block:16px 4px;text-align:center}
 
 /* hero */
 .hero{padding-block:80px 48px}
@@ -208,7 +209,10 @@ footer .w{padding-block:36px 16px}
   .griglia3,.griglia4,.griglia2,.chiusura .w,.hero .w{grid-template-columns:1fr}
   .lead,.hero p.sub{font-size:17px}
   .nav{display:none}
-  .nav-toggle{display:block}
+  .nav-toggle{display:block;margin-right:-11px}
+  .barra-azioni .btn{display:none}
+  .chiusura .copy{order:1}
+  #team .griglia2{grid-template-columns:1fr 1fr;gap:16px}
   .card.in-vista,.passo.in-vista,.attr.in-vista{transform:scale(1.02);box-shadow:inset 0 0 0 2px var(--ottone)}
   .f-top{grid-template-columns:1fr 1fr;gap:28px 20px}
   .f-marchio,.f-parliamone{grid-column:1 / -1}
@@ -262,6 +266,7 @@ footer .w{padding-block:36px 16px}
   .catena .cella{padding-block:18px;border-top:1px solid var(--bordo);text-align:left}
   .catena .cella:first-child{border-top:0;padding-top:0}
   .segno{display:none}
+  .nota-a{text-align:left}
   .cella.finale .val{font-size:27px}
   .risultato .top{flex-direction:column;align-items:flex-start;gap:8px}
   .risultato .top .et{max-width:none}

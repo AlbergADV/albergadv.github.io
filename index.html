@@ -1,10 +1,39 @@
 <!doctype html>
 <html lang="it">
 <head>
+<script type="text/javascript">
+var _iub = _iub || [];
+_iub.csConfiguration = {
+  "cookiePolicyId": 12217892,
+  "lang": "it",
+  "askConsentAtCookiePolicyUpdate": true,
+  "perPurposeConsent": true,
+  "floatingPreferencesButtonDisplay": "bottom-left",
+  "banner": {
+    "position": "top",
+    "backgroundOverlay": true,
+    "acceptButtonDisplay": true,
+    "rejectButtonDisplay": true,
+    "customizeButtonDisplay": true,
+    "closeButtonDisplay": false,
+    "showTitle": false
+  }
+};
+</script>
+<script type="text/javascript" src="//cdn.iubenda.com/cs/iubenda_cs.js" charset="UTF-8" async></script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Google tag (gtag.js) -->
+<script type="text/plain" class="_iub_cs_activate" async src="https://www.googletagmanager.com/gtag/js?id=G-HZLFF4B39Y"></script>
+<script type="text/plain" class="_iub_cs_activate">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-HZLFF4B39Y');
+</script>
 <!-- title tag: [da decidere] -->
-<title></title>
+<title>Google Ads per Hotel: più prenotazioni dirette | AlbergADV</title>
 <!-- schema JSON-LD: [da decidere] -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Source+Sans+3:wght@400;600&display=swap">
 <link rel="stylesheet" href="assets/style.css">
@@ -23,7 +52,7 @@
       <a href="index.html#perche-noi">Perché sceglierci</a>
     </nav>
     <div class="barra-azioni">
-      <a class="btn sm" href="modulo.html">Consulenza gratuita</a>
+      <a class="btn sm" href="modulo.html" data-cta="barra">Consulenza gratuita</a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-mobile" aria-label="Apri il menu">
         <span class="nav-toggle-bars" aria-hidden="true"></span>
       </button>
@@ -35,6 +64,7 @@
       <a href="index.html#soluzione">La soluzione</a>
       <a href="index.html#metodo">Il nostro metodo</a>
       <a href="index.html#perche-noi">Perché sceglierci</a>
+      <a class="btn sm" href="modulo.html" data-cta="barra">Consulenza gratuita</a>
     </div>
   </nav>
 </header>
@@ -48,7 +78,7 @@
       <p class="occhiello">Per hotel e strutture ricettive</p>
       <h1>Riempi le camere senza regalare commissioni.</h1>
       <p class="sub">Quante camere regali a Booking ogni anno? Pagare il 20% alle OTA significa che ⅕ del tuo hotel è loro. Ti aiuteremo a riprenderti i tuoi ospiti e trovarne di nuovi, riempiendo il tuo canale diretto di prenotazioni.</p>
-      <a class="btn" href="modulo.html">Consulenza gratuita</a>
+      <a class="btn" href="modulo.html" data-cta="hero">Consulenza gratuita</a>
     </div>
     <div class="slot-video">Slot video</div>
   </div>
@@ -110,7 +140,7 @@
       <p>Zero pensieri, solo più prenotazioni.</p>
       <p>Risultati immediati.</p>
     </div>
-    <div class="rivela" style="margin-top:32px"><a class="btn" href="modulo.html">Consulenza gratuita</a></div>
+    <div class="rivela" style="margin-top:32px"><a class="btn" href="modulo.html" data-cta="soluzione">Consulenza gratuita</a></div>
   </div>
 </section>
 
@@ -159,7 +189,7 @@
         <div><h3>Selezione all'ingresso</h3><p style="text-wrap:pretty">Non accettiamo tutti: collaboriamo solo con strutture in cui troviamo potenziale.</p></div>
       </div>
     </div>
-    <div class="cta-riga rivela"><a class="btn" href="modulo.html">Consulenza gratuita</a></div>
+    <div class="cta-riga rivela"><a class="btn" href="modulo.html" data-cta="perche-noi">Consulenza gratuita</a></div>
   </div>
 </section>
 
@@ -201,7 +231,7 @@
         <p>Dati concreti e verificabili: quanto budget è stato investito e che ritorno ha generato.</p>
       </div>
     </div>
-    <div class="cta-riga rivela"><a class="btn" href="modulo.html">Consulenza gratuita</a></div>
+    <div class="cta-riga rivela"><a class="btn" href="modulo.html" data-cta="garanzia">Consulenza gratuita</a></div>
   </div>
 </section>
 
@@ -212,7 +242,7 @@
       <p class="occhiello">Consulenza gratuita — senza impegno</p>
       <h2>I giorni passano.<br>Le commissioni si accumulano.<br>E il tuo guadagno?</h2>
       <p class="testo">Valutiamo la tua situazione, e al termine della consulenza ti diciamo subito se c'è utile recuperabile, poi la scelta di iniziare è tua, nessuna pressione.</p>
-      <a class="btn" href="modulo.html">Consulenza gratuita</a>
+      <a class="btn" href="modulo.html" data-cta="consulenza">Consulenza gratuita</a>
     </div>
     <div>
       <div class="conto-b rivela">
@@ -268,16 +298,18 @@
       <div class="f-parliamone">
         <p class="f-occhiello">Parliamone</p>
         <p class="f-invito">Ti diciamo subito se c'è utile recuperabile. Senza impegno.</p>
-        <a class="btn sm" href="modulo.html">Consulenza gratuita</a>
+        <a class="btn sm" href="modulo.html" data-cta="footer">Consulenza gratuita</a>
       </div>
     </div>
     <div class="f-legale">
-      <span><a href="#">Privacy policy</a> &nbsp;·&nbsp; <a href="#">Cookie policy</a></span>
+      <span><a href="https://www.iubenda.com/privacy-policy/12217892" class="iubenda-white iubenda-noiframe iubenda-embed" title="Privacy Policy">Privacy Policy</a> &nbsp;·&nbsp; <a href="https://www.iubenda.com/privacy-policy/12217892/cookie-policy" class="iubenda-white iubenda-noiframe iubenda-embed" title="Cookie Policy">Cookie Policy</a></span>
     </div>
   </div>
 </footer>
 
 <script src="assets/app.js"></script>
+<script src="assets/tracking.js"></script>
+<script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
 
 </body>
 </html>
