@@ -25,7 +25,7 @@ h1{font-size:52px;line-height:1.1;letter-spacing:-.01em}
 h2{font-size:36px;line-height:1.15;letter-spacing:-.005em}
 h3{font-size:21px;line-height:1.25}
 p{margin:0}
-.occhiello{font-family:var(--sans);font-size:12.6px;font-weight:600;letter-spacing:.14em;
+.occhiello{font-family:var(--sans);font-size:18px;font-weight:600;letter-spacing:.14em;
            text-transform:uppercase;color:var(--ottone);margin:0}
 .lead{font-size:19px}
 .testo{}
@@ -202,7 +202,7 @@ footer .w{padding-block:36px 16px}
 }
 @media (max-width:900px){
   :root{--sez:32px}
-  h1{font-size:28px} h2{font-size:27px} h3{font-size:19px}
+  h1{font-size:30px} h2{font-size:27px} h3{font-size:19px}
   body{font-size:16px}
   .hero{padding-block:48px 32px}
   .hero .occhiello{letter-spacing:.05em}
