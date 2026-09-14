@@ -154,9 +154,9 @@ html{scroll-padding-top:90px}
 .chiusura .copy{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
 
 footer{background:var(--bianco);border-top:1px solid var(--bordo);font-size:15px}
-footer .w{padding-block:36px 20px}
+footer .w{padding-block:36px 16px}
 
-.f-top{display:grid;grid-template-columns:1.5fr 1fr 1.15fr 1.35fr;gap:32px}
+.f-top{display:grid;grid-template-columns:1.5fr 1fr 1.15fr 1.35fr;gap:32px;align-items:start}
 
 .f-marchio .logo{height:42px}
 .f-claim{margin:10px 0 16px;max-width:30ch}
@@ -172,13 +172,9 @@ footer .w{padding-block:36px 20px}
 .f-ico{width:17px;height:17px;flex:none;color:var(--ottone)}
 
 .f-invito{margin:0 0 14px}
-.f-link{display:inline-flex;align-items:center;gap:8px;color:var(--navy);font-weight:600;
-        text-decoration:none}
-.f-link:hover{text-decoration:underline;text-underline-offset:3px}
-.f-link:focus-visible{outline:2px solid var(--ottone);outline-offset:3px}
 
-.f-legale{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;
-          margin-top:16px;font-size:13.5px}
+.f-legale{display:flex;justify-content:flex-end;align-items:center;gap:14px;flex-wrap:wrap;
+          margin-top:2px;font-size:13.5px}
 .f-legale a{color:var(--corpo);text-decoration:underline;text-underline-offset:3px}
 .f-legale a:focus-visible{outline:2px solid var(--ottone);outline-offset:3px}
 
@@ -216,7 +212,6 @@ footer .w{padding-block:36px 20px}
   .card.in-vista,.passo.in-vista,.attr.in-vista{transform:scale(1.02);box-shadow:inset 0 0 0 2px var(--ottone)}
   .f-top{grid-template-columns:1fr 1fr;gap:28px 20px}
   .f-marchio,.f-parliamone{grid-column:1 / -1}
-  .f-legale{flex-direction:column;align-items:flex-start;gap:8px}
 }
 
 /* blocchi esempio della perdita */

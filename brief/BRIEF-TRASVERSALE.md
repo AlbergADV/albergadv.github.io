@@ -66,7 +66,7 @@ Padding 44px sopra e 24px sotto · testo 15px · riga legale 13,5px.
 
 **Mobile (≤900px):** le colonne vanno a **due per riga**, mai in colonna unica — la colonna unica lasciava vuoti larghi fra i gruppi, bocciata da Simone a vista il 14/09/2026. Marchio e "Parliamone" prendono tutta la larghezza (`grid-column: 1 / -1`), "Pagina" e "Contatti" restano affiancate. Riga legale impilata a sinistra.
 
-**Niente bottone CTA nel footer:** su `index.html` la sezione 08 chiude con il suo bottone appena sopra, e due bottoni attaccati si annullano. La quarta colonna porta un **link testuale** in `var(--ottone)`, non un secondo bottone.
+**Bottone CTA nel footer, solo su `index.html`** (14/09/2026 (9)) — decisione ribaltata su richiesta esplicita di Simone dopo aver visto il render: la quarta colonna ora porta il **bottone `.btn` standard** del sito ("Consulenza gratuita", senza freccia), non più un link testuale. La regola originale ("niente bottone, due bottoni attaccati si annullano" — la sezione 08 chiude con il suo appena sopra) resta scritta qui come motivo scartato: vedi §9.
 
 **Mappa completa dei link:**
 
@@ -80,7 +80,7 @@ Padding 44px sopra e 24px sotto · testo 15px · riga legale 13,5px.
 | Contatti | icona + numero | `tel:+393920660255` | "392 066 0255" — reale, dato da Simone il 14/09/2026 |
 | Contatti | icona + numero | `tel:+393923850668` | "392 385 0668" — reale, dato da Simone il 14/09/2026 |
 | Contatti | icona busta + testo | `mailto:info@alberg-adv.com` | "Scrivici" — reale dal 14/09/2026 (8), dato da Simone (`CLIENTE.md` §1) |
-| Parliamone | link testuale — solo `index.html` dal 14/09/2026 (7) | `modulo.html` | "Consulenza gratuita →" |
+| Parliamone | bottone `.btn` standard — solo `index.html` dal 14/09/2026 (7), diventato bottone il (9) | `modulo.html` | "Consulenza gratuita" (senza freccia dal 14/09/2026 (9)) |
 | riga legale | Privacy policy | `#` (segnaposto) | "Privacy policy" |
 | riga legale | Cookie policy | `#` (segnaposto) | "Cookie policy" |
 
@@ -174,3 +174,4 @@ I 4 link della barra e del pannello mobile **non entrano in questa tabella**: so
 - **14/09/2026 (6) — tolto il bordo sopra la riga legale:** Simone ha segnalato che la linea divisoria sopra "© 2026 AlbergADV" allargava troppo il footer. Chiarito con una domanda (non uno spostamento della riga legale, solo la spaziatura/il bordo sopra di essa) — tolti `border-top` e `padding-top` da `.f-legale`, resta solo `margin-top:16px`. Il testo "© 2026 AlbergADV" non è stato toccato. Footer verificato via `getBoundingClientRect`: da ~268px a ~243px di altezza. §3 aggiornato.
 - **14/09/2026 (7) — il CTA di "Parliamone" solo su `index.html`:** su richiesta di Simone, tolto il link "Consulenza gratuita →" dal footer di `modulo.html` (ci si è già) e `grazie.html` (la richiesta è già stata inviata) — rimandare al modulo non ha senso su quelle due pagine. Resta solo su `index.html`. La colonna "Parliamone" su `modulo.html`/`grazie.html` mantiene occhiello e riga di invito, senza link. Il footer non è più identico byte-per-byte sulle tre pagine: deroga dichiarata in §3, stesso perimetro già usato per la CTA della barra alta (§2). Copy della riga di invito non toccato: resta "Ti diciamo subito se c'è utile recuperabile. Senza impegno." anche dove non c'è più il link — possibile follow-up se Simone lo vuole riscritto, non richiesto oggi. §3 e §6 aggiornati.
 - **14/09/2026 (8) — email reale:** Simone ha dato l'indirizzo info@alberg-adv.com. Registrato in `CLIENTE.md` §1. Il link "Scrivici" del footer (icona busta, colonna Contatti) passa da `href="#"` a `mailto:info@alberg-adv.com` su tutte e tre le pagine — non più segnaposto. Tolta la riga "Scrivici" da §5 (non più inerte). §3 aggiornato.
+- **14/09/2026 (9) — il link "Parliamone" diventa bottone:** Simone ha visto il render e ha chiesto "il CTA tondo classico" al posto del link testuale — decisione ribaltata rispetto alla regola originale ("niente bottone, due bottoni attaccati si annullano"). Ora `.btn` standard, testo "Consulenza gratuita" senza freccia. Solo su `index.html` (il bottone non esiste su `modulo.html`/`grazie.html`, dove la colonna Parliamone non ha già un'azione, vedi 14/09/2026 (7)). Tolte le regole CSS `.f-link` (non più usate). §3 e §9 (`DESIGN-BRIEF.md`) aggiornati.
