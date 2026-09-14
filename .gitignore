@@ -7,3 +7,6 @@ Thumbs.db
 
 # Editor
 .vscode/
+
+# File di runtime della sessione
+.claude/scheduled_tasks.lock
