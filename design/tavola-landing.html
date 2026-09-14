@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Tavola di design approvata il 13/09/2026. Materiale in ingresso: NON va online. -->
+<title>Tavola landing hotel — HS Agency</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+:root{
+  --bianco:#FFFFFF; --avorio:#F6F1E7; --bordo:#E6DECE;
+  --titolo:#1A1A18; --corpo:#4A4740;
+  --ottone:#187C31; --navy:#3D6EA3;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --sans:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  --max:1140px; --gut:24px; --r:10px; --cor:6px;
+  --sez:64px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bianco);color:var(--corpo);
+     font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+
+.w{max-width:var(--max);margin:0 auto;padding-inline:var(--gut)}
+section{padding-block:var(--sez)}
+.sf-bianco-avorio{height:100px;background:linear-gradient(to bottom,#FFFFFF,#F6F1E7)}
+.bg-av{background:var(--avorio)}
+
+h1,h2,h3{font-family:var(--serif);color:var(--titolo);margin:0;text-wrap:balance;font-weight:600}
+h1{font-size:52px;line-height:1.1;letter-spacing:-.01em}
+h2{font-size:36px;line-height:1.15;letter-spacing:-.005em}
+h3{font-size:21px;line-height:1.25}
+p{margin:0}
+.occhiello{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.14em;
+           text-transform:uppercase;color:var(--ottone);margin:0}
+.lead{font-size:19px}
+.testo{}
+
+.btn{position:relative;display:inline-block;background:var(--navy);color:#fff;font-family:var(--sans);
+     font-weight:600;font-size:17px;padding:16px 32px;border:0;border-radius:var(--r);
+     text-decoration:none;transform:translateZ(0);
+     transition:background 140ms ease-out, transform 140ms ease-out}
+.btn::after{content:"";position:absolute;inset:var(--cor);pointer-events:none;
+     border:1px solid rgba(255,255,255,.45);border-radius:calc(var(--r) - var(--cor))}
+.btn:hover{background:#4B81B8;transform:scale(1.04)}
+.btn:active{transform:scale(.99)}
+.btn:focus-visible{outline:2px solid var(--ottone);outline-offset:3px}
+.btn.sm{font-size:15px;padding:10px 20px}
+
+/* barra alta */
+.barra{border-bottom:1px solid var(--bordo);background:#fff}
+.barra .w{display:flex;align-items:center;justify-content:space-between;
+          padding-block:16px;gap:16px;flex-wrap:wrap}
+.logo{font-family:var(--serif);font-weight:700;font-size:20px;color:var(--titolo);letter-spacing:.02em}
+
+/* hero centrata */
+.hero{padding-block:80px 64px}
+.hero .w{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(0,1fr);
+         gap:48px;align-items:center}
+.hero .inner{display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+.hero p.sub{font-size:19px}
+.slot-video{border:1px dashed var(--bordo);border-radius:var(--r);background:var(--avorio);
+            aspect-ratio:332/340;display:grid;place-items:center;text-align:center;padding:16px;color:#8B8579;
+            font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+
+/* blocchi generici */
+.testa{display:flex;flex-direction:column;gap:12px;margin-bottom:36px}
+.griglia3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.griglia4{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.griglia2{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
+.card{position:relative;background:var(--avorio);padding:24px;display:flex;flex-direction:column;gap:10px;border-radius:var(--r)}
+.card::after,.passo::after,.attr::after{content:"";position:absolute;inset:var(--cor);pointer-events:none;
+     border:1px solid var(--ottone);border-radius:calc(var(--r) - var(--cor))}
+.bg-av .card{background:var(--bianco)}
+.card .cap{display:flex;align-items:center;gap:12px}
+.card p{font-size:16px}
+.card.evid{box-shadow:inset 0 0 0 2px var(--ottone)}
+
+.icona{width:32px;height:32px;color:var(--ottone);flex:none}
+.passo{position:relative;background:var(--avorio);padding:24px;display:flex;flex-direction:column;gap:10px;border-radius:var(--r);aspect-ratio:4/5}
+@media (max-width:900px){.passo{aspect-ratio:auto}}
+.bg-av .passo{background:var(--bianco)}
+.passo .n{font-family:var(--serif);font-size:15px;color:var(--ottone);font-weight:600;
+          font-variant-numeric:tabular-nums}
+.passo p{font-size:16px}
+
+.attr{position:relative;background:var(--bianco);padding:24px;display:flex;gap:16px;align-items:flex-start;border-radius:var(--r)}
+.attr div{display:flex;flex-direction:column;gap:6px}
+.attr p{font-size:16px}
+
+.slot{border:1px dashed var(--bordo);border-radius:var(--r);background:var(--avorio);padding:24px var(--gut);
+      text-align:center;color:#8B8579;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.slot.chiaro{background:#FBF8F2}
+
+.foto{position:relative;border-radius:var(--r);outline:1px solid var(--ottone);outline-offset:calc(var(--cor) * -1);aspect-ratio:1/1;background:var(--bordo);display:grid;place-items:center;
+      color:#8B8579;font-size:12px;letter-spacing:.14em;text-transform:uppercase}
+.persona{display:flex;flex-direction:column;gap:12px}
+.persona span{font-family:var(--serif);font-size:19px;color:var(--titolo)}
+
+.attrib-riga{display:grid;grid-template-columns:47.5% 1fr;gap:40px}
+.attrib-riga p{border-left:3px solid var(--ottone);padding-left:22px;color:var(--titolo);
+     font-family:var(--serif);font-weight:600;font-size:27px;line-height:1.22;
+     padding-block:14px;
+     background:linear-gradient(to right, rgba(24,124,49,.14) 0%, rgba(24,124,49,.05) 40%, rgba(24,124,49,0) 80%)}
+@media (max-width:900px){.attrib-riga p{font-size:21px;padding-left:18px}}
+@media (max-width:820px){.attrib-riga{grid-template-columns:1fr;gap:24px}}
+.cta-riga{margin-top:40px;display:flex;justify-content:center}
+
+.chiusura .w{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
+.chiusura .copy{display:flex;flex-direction:column;gap:16px;align-items:flex-start}
+
+footer{background:var(--avorio);border-top:1px solid var(--bordo);padding-block:32px;font-size:14px}
+footer .w{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+footer a{color:var(--corpo);text-decoration:underline;text-underline-offset:3px}
+
+/* ——— movimento ——— */
+@keyframes sali{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@keyframes apri{from{opacity:0;transform:scale(1.04)}to{opacity:1;transform:none}}
+.hero .inner > *{animation:sali 560ms cubic-bezier(.2,.7,.3,1) both}
+.hero .inner > *:nth-child(1){animation-delay:60ms}
+.hero .inner > *:nth-child(2){animation-delay:140ms}
+.hero .inner > *:nth-child(3){animation-delay:220ms}
+.hero .inner > *:nth-child(4){animation-delay:300ms}
+.hero .slot-video{animation:apri 700ms cubic-bezier(.2,.7,.3,1) both;animation-delay:380ms}
+.js .rivela{opacity:0}
+.js .rivela.in{animation:sali 520ms cubic-bezier(.2,.7,.3,1) both}
+.js .rivela.foto-in.in{animation:apri 640ms cubic-bezier(.2,.7,.3,1) both}
+.js .rivela.in:nth-child(2){animation-delay:90ms}
+.js .rivela.in:nth-child(3){animation-delay:180ms}
+.js .rivela.in:nth-child(4){animation-delay:270ms}
+
+@media (prefers-reduced-motion:reduce){
+  *{transition:none!important;animation:none!important}
+  .js .rivela{opacity:1}
+  .btn:hover{transform:none}
+}
+@media (max-width:900px){
+  :root{--sez:44px}
+  h1{font-size:36px} h2{font-size:27px} h3{font-size:19px}
+  body{font-size:16px}
+  .hero{padding-block:48px 40px}
+  .griglia3,.griglia4,.griglia2,.chiusura .w,.hero .w{grid-template-columns:1fr}
+  .lead,.hero p.sub{font-size:17px}
+}
+</style>
+</head>
+<body>
+
+<header class="barra">
+  <div class="w">
+    <span class="logo">HS Agency</span>
+    <a class="btn sm" href="#">Consulenza gratuita</a>
+  </div>
+</header>
+
+<!-- 01 HERO — bianco -->
+<section class="hero">
+  <div class="w">
+    <div class="inner">
+      <p class="occhiello">Per hotel e strutture ricettive</p>
+      <h1>Riempi le camere senza regalare commissioni.</h1>
+      <p class="sub">Quante camere regali a Booking ogni anno? Pagare il 20% alle OTA significa che ⅕ del tuo hotel è loro. Ti aiutiamo a riprenderti i tuoi ospiti e a trovarne di nuovi, riempiendo il tuo canale diretto di prenotazioni.</p>
+      <a class="btn" href="#">Consulenza gratuita</a>
+    </div>
+    <div class="slot-video">Slot video</div>
+  </div>
+</section>
+
+<!-- 02 PROBLEMA — bianco -->
+<section>
+  <div class="w">
+    <div class="testa rivela">
+      <p class="occhiello">Il danno reale</p>
+      <h2>Booking ti aiuta a caro prezzo.<br>Le commissioni non sono tutto il conto</h2>
+      <p class="lead">Di sicuro le OTA sono comode e funzionano, ma non sei tu a fare le regole. Ecco il conto finale.</p>
+    </div>
+    <div class="griglia3">
+      <div class="card evid rivela">
+        <div class="cap">
+          <svg class="icona" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M21 10.5A7.5 7.5 0 1 0 21 22.5"/><path d="M7 15h11M7 19h9"/></svg>
+          <h3>Costi su costi</h3>
+        </div>
+        <p>Le commissioni altissime in prenotazione non bastano: se non accetti sconti o ulteriori pagamenti resti comunque invisibile.</p>
+      </div>
+      <div class="card rivela">
+        <div class="cap">
+          <svg class="icona" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><circle cx="16" cy="12" r="5"/><path d="M6 27c0-5.5 4.5-9 10-9s10 3.5 10 9"/><path d="M22 6l6 6M28 6l-6 6"/></svg>
+          <h3>L'ospite non è davvero tuo</h3>
+        </div>
+        <p>Dati e contatti dei tuoi ospiti se li tengono stretti e ti impediscono di contattarli. Così tornano tramite loro e tu paghi di nuovo.</p>
+      </div>
+      <div class="card rivela">
+        <div class="cap">
+          <svg class="icona" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M4 12h6l10-6v20l-10-6H4z"/><path d="M24 12c1.6 1.2 1.6 6.8 0 8"/></svg>
+          <h3>Paghi pure chi ti conosce già</h3>
+        </div>
+        <p>Le OTA comprano pubblicità sul tuo nome, intercettando chi ti conosce o vuole tornare, rivendendotelo a caro prezzo.</p>
+      </div>
+    </div>
+    <div class="slot rivela" style="margin-top:40px">Barra dei risultati reali — la definiamo a sito creato</div>
+    <div class="cta-riga rivela"><a class="btn" href="#">Consulenza gratuita</a></div>
+  </div>
+</section>
+
+<!-- 03 SOLUZIONE — bianco -->
+<section class="soluzione">
+  <div class="w">
+    <div class="testa rivela" style="margin-bottom:24px">
+      <p class="occhiello">Un cambio di dinamiche</p>
+      <h2>Rendiamo il tuo canale diretto la fonte principale delle tue prenotazioni</h2>
+      <p class="lead">Non serve uscire dalle OTA, ti aiutiamo a riprendere il controllo delle tue prenotazioni. Chi cerca su Google un hotel nella tua zona o cerca te, deve trovare il tuo sito per primo.</p>
+    </div>
+    <div class="attrib-riga rivela">
+      <p>Zero pensieri, solo più prenotazioni.</p>
+      <p>Risultati immediati.</p>
+    </div>
+    <div class="rivela" style="margin-top:32px"><a class="btn" href="#">Consulenza gratuita</a></div>
+  </div>
+</section>
+
+<!-- 04 METODO — bianco -->
+<section>
+  <div class="w">
+    <div class="testa rivela">
+      <p class="occhiello">Riprendiamo ciò che è tuo</p>
+      <h2>Come garantiamo il successo della campagna</h2>
+      <p class="lead">Non ci limitiamo a difendere il tuo nome, rendiamo il tuo hotel la destinazione di riferimento della tua zona.</p>
+    </div>
+    <div class="griglia4">
+      <div class="passo rivela"><span class="n">01</span><h3>La voce degli ospiti</h3><p>Ricaviamo i desideri, le difficoltà e i problemi dei tuoi ospiti dalle loro parole. Così sapremo esattamente cosa vogliono ricevere o vedere risolto per convertire.</p></div>
+      <div class="passo rivela"><span class="n">02</span><h3>Landing page</h3><p>Grazie allo studio scriviamo un contenuto infallibile, prenotare da te sembrerà il percorso più naturale per chi visita.</p></div>
+      <div class="passo rivela"><span class="n">03</span><h3>Campagne</h3><p>Seguiamo settimanalmente le campagne, correggiamo keyword, testiamo diversi contenuti e impostazioni per trovare gli ingredienti perfetti.</p></div>
+      <div class="passo rivela"><span class="n">04</span><h3>Crescita</h3><p>Trovata la formula vincente espandiamo il target, si incrementa il budget e si testano sempre nuovi contenuti.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="sf-bianco-avorio"></div>
+
+<!-- 05 AUTORITÀ — avorio -->
+<section class="bg-av" style="padding-top:0">
+  <div class="w">
+    <div class="testa rivela">
+      <p class="occhiello">Perché noi</p>
+      <h2>Nel settore i migliori in advertising. Facciamo solo questo tutto il giorno: ti portiamo prenotazioni senza chiederti commissioni.</h2>
+      <p class="lead">Non ci intromettiamo nei tuoi sistemi, devi solo poter gestire più prenotazioni.</p>
+    </div>
+    <div class="griglia2">
+      <div class="attr rivela">
+        <svg class="icona" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M5 8h22v14H14l-6 5v-5H5z"/></svg>
+        <div><h3>Contatto diretto</h3><p>Nessun ticket o attesa, parli direttamente con chi gestisce le tue campagne e ricevi risposta in giornata 7 su 7, anche in alta stagione.</p></div>
+      </div>
+      <div class="attr rivela">
+        <svg class="icona" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M5 26V6M5 26h22"/><path d="M10 21v-6M16 21v-11M22 21v-8"/></svg>
+        <div><h3>Risultati misurabili</h3><p>Tracciamo l'incremento di prenotazioni dirette e mettiamo nero su bianco il ritorno dei tuoi investimenti.</p></div>
+      </div>
+      <div class="attr rivela">
+        <svg class="icona" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M16 4l11 4v8c0 6-4.5 10.5-11 12C9.5 26.5 5 22 5 16V8z"/></svg>
+        <div><h3>Tutto resta tuo</h3><p>I dati dei tuoi ospiti, delle campagne e landing page saranno in tuo possesso, e ti rimarranno per sempre.</p></div>
+      </div>
+      <div class="attr rivela">
+        <svg class="icona" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M16 4l3.6 7.6 8.4 1.2-6 5.9 1.4 8.3L16 23l-7.4 4 1.4-8.3-6-5.9 8.4-1.2z"/></svg>
+        <div><h3>Selezione all'ingresso</h3><p>Non accettiamo tutti: collaboriamo solo con strutture in cui troviamo potenziale.</p></div>
+      </div>
+    </div>
+    <div class="cta-riga rivela"><a class="btn" href="#">Consulenza gratuita</a></div>
+  </div>
+</section>
+
+<!-- 06 TEAM — avorio -->
+<section class="bg-av">
+  <div class="w">
+    <div class="testa rivela"><p class="occhiello">Il team</p><h2>Le menti dietro le campagne</h2></div>
+    <div class="griglia2">
+      <div class="persona rivela foto-in"><div class="foto">Foto</div><span>Marketing e strategic planning expert</span></div>
+      <div class="persona rivela foto-in"><div class="foto">Foto</div><span>Advertise success manager</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 07 RIBALTA — avorio -->
+<section class="bg-av">
+  <div class="w">
+    <div class="testa rivela" style="align-items:center;text-align:center"><p class="occhiello">Puoi solo guadagnarci</p><h2>Ci prendiamo noi il rischio</h2></div>
+    <div class="griglia3">
+      <div class="card rivela">
+        <div class="cap">
+          <svg class="icona" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><rect x="8" y="15" width="16" height="12" rx="2"/><path d="M11 15v-4a5 5 0 0 1 9-3"/></svg>
+          <h3>Nessun vincolo</h3>
+        </div>
+        <p>Potrai andartene quando vuoi, non sarai bloccato in nessun contratto pluriennale.</p>
+      </div>
+      <div class="card evid rivela">
+        <div class="cap">
+          <svg class="icona" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M16 4l11 4v8c0 6-4.5 10.5-11 12C9.5 26.5 5 22 5 16V8z"/><path d="M11 15.5l3.5 3.5 6.5-6.5"/></svg>
+          <h3>Garanzia</h3>
+        </div>
+        <p>Se non ripaghi l'investimento in prenotazioni dirette entro i primi 30 giorni, continuiamo a lavorare fino al raggiungimento dell'obiettivo.</p>
+      </div>
+      <div class="card rivela">
+        <div class="cap">
+          <svg class="icona" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true"><path d="M7 4h13l5 5v19H7z"/><path d="M11 15h10M11 20h10M11 10h5"/></svg>
+          <h3>Report trasparenti</h3>
+        </div>
+        <p>Dati concreti e verificabili: quanto budget è stato investito e che ritorno ha generato.</p>
+      </div>
+    </div>
+    <div class="cta-riga rivela"><a class="btn" href="#">Consulenza gratuita</a></div>
+  </div>
+</section>
+
+<!-- 08 CHIUSURA — avorio -->
+<section class="chiusura bg-av">
+  <div class="w">
+    <div class="copy rivela">
+      <p class="occhiello">Consulenza gratuita — senza impegno</p>
+      <h2>I giorni passano. Le commissioni si accumulano. E il tuo guadagno?</h2>
+      <p class="testo">Valutiamo la tua situazione, e al termine della consulenza ti diciamo subito se c'è utile recuperabile, poi la scelta di iniziare è tua, nessuna pressione.</p>
+      <a class="btn" href="#">Consulenza gratuita</a>
+    </div>
+    <div class="slot chiaro rivela foto-in" style="padding-block:56px">Barra dei risultati reali — la definiamo a sito creato</div>
+  </div>
+</section>
+
+<footer>
+  <div class="w">
+    <span><span class="logo" style="font-size:17px">HS Agency</span> · ragione sociale, P. IVA e contatti da fornire</span>
+    <span><a href="#">Privacy policy</a> &nbsp;·&nbsp; <a href="#">Cookie policy</a></span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var ridotto = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (ridotto) return;
+  document.documentElement.classList.add('js');
+  var voci = document.querySelectorAll('.rivela');
+  function mostraTutto(){ for (var i=0;i<voci.length;i++) voci[i].classList.add('in'); }
+  if (!('IntersectionObserver' in window)) { mostraTutto(); return; }
+  var oss = new IntersectionObserver(function(righe){
+    righe.forEach(function(r){ if (r.isIntersecting){ r.target.classList.add('in'); oss.unobserve(r.target); } });
+  }, { rootMargin: '0px 0px -10% 0px', threshold: 0.08 });
+  for (var i=0;i<voci.length;i++) oss.observe(voci[i]);
+  setTimeout(mostraTutto, 1600);
+})();
+</script>
+
+</body>
+</html>

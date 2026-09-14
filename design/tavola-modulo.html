@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Tavola di design approvata il 13/09/2026. Materiale in ingresso: NON va online. -->
+<title>Tavola pagina modulo — HS Agency</title>
+<!-- Aggiornata 14/09/2026: tolta la spunta di consenso privacy. Simone: privacy citata solo nel footer. -->
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+:root{
+  --bianco:#FFFFFF; --avorio:#F6F1E7; --bordo:#E6DECE;
+  --titolo:#1A1A18; --corpo:#4A4740;
+  --ottone:#187C31; --navy:#3D6EA3; --navy-hover:#4B81B8;
+  --segnaposto:#8B8579;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --sans:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  --max:1140px; --gut:24px; --r:10px; --cor:6px;
+  --sez:64px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--avorio);color:var(--corpo);
+     font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+
+.w{max-width:var(--max);margin:0 auto;padding-inline:var(--gut)}
+
+h1,h2,h3{font-family:var(--serif);color:var(--titolo);margin:0;text-wrap:balance;font-weight:600}
+h1{font-size:52px;line-height:1.1;letter-spacing:-.01em}
+h3{font-size:21px;line-height:1.25}
+p{margin:0}
+.occhiello{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.14em;
+           text-transform:uppercase;color:var(--ottone);margin:0}
+.lead{font-size:19px}
+
+/* barra alta — identica al sito */
+.barra{border-bottom:1px solid var(--bordo);background:var(--bianco)}
+.barra .w{display:flex;align-items:center;padding-block:16px}
+.logo{font-family:var(--serif);font-weight:700;font-size:20px;color:var(--titolo);letter-spacing:.02em}
+
+/* bottone CTA — identico al sito */
+.btn{position:relative;display:inline-block;background:var(--navy);color:#fff;font-family:var(--sans);
+     font-weight:600;font-size:17px;padding:16px 32px;border:0;border-radius:var(--r);
+     text-decoration:none;text-align:center;cursor:pointer;
+     transition:background 140ms ease-out, transform 140ms ease-out}
+.btn::after{content:"";position:absolute;inset:var(--cor);pointer-events:none;
+     border:1px solid rgba(255,255,255,.45);border-radius:calc(var(--r) - var(--cor))}
+.btn:hover{background:var(--navy-hover);transform:scale(1.04)}
+.btn:active{transform:scale(.99)}
+.btn:focus-visible{outline:2px solid var(--ottone);outline-offset:3px}
+.btn.pieno{display:block;width:100%}
+
+/* sezione modulo */
+.modulo{padding-block:var(--sez)}
+.modulo .w{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:48px;align-items:start}
+
+.colonna-testo{display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+
+/* card del modulo — stesso segno "12+3" dei box del sito */
+.form-card{position:relative;background:var(--bianco);border-radius:var(--r);
+           padding:32px;display:flex;flex-direction:column;gap:24px}
+.form-card::after{content:"";position:absolute;inset:var(--cor);pointer-events:none;
+     border:1px solid var(--ottone);border-radius:calc(var(--r) - var(--cor))}
+.form-card h3{margin-bottom:-4px}
+
+.campo{display:flex;flex-direction:column;gap:8px}
+.campo label{font-family:var(--sans);font-size:14px;font-weight:600;color:var(--titolo)}
+.campo input,.campo select{width:100%;font-family:var(--sans);font-size:16px;color:var(--corpo);
+     background:var(--bianco);border:1px solid var(--bordo);border-radius:var(--r);padding:16px}
+.campo input::placeholder{color:var(--segnaposto)}
+.campo input:focus-visible,.campo select:focus-visible{outline:2px solid var(--ottone);outline-offset:2px;border-color:var(--ottone)}
+.campo select{appearance:none;-webkit-appearance:none;padding-right:44px;
+     background-repeat:no-repeat;background-position:right 16px center;background-size:16px;
+     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23187C31' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E")}
+.campo select:invalid{color:var(--segnaposto)}
+
+footer{background:var(--avorio);border-top:1px solid var(--bordo);padding-block:32px;font-size:14px}
+footer .w{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+footer a{color:var(--corpo);text-decoration:underline;text-underline-offset:3px}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+@media (max-width:900px){
+  h1{font-size:36px} h3{font-size:19px}
+  body{font-size:16px}
+  :root{--sez:44px}
+  .modulo .w{grid-template-columns:1fr}
+  .lead{font-size:17px}
+}
+@media (max-width:480px){
+  .form-card{padding:24px}
+}
+</style>
+</head>
+<body>
+
+<header class="barra">
+  <div class="w">
+    <span class="logo">HS Agency</span>
+  </div>
+</header>
+
+<main>
+<section class="modulo">
+  <div class="w">
+
+    <div class="colonna-testo">
+      <p class="occhiello">Consulenza gratuita — senza impegno</p>
+      <h1>I giorni passano. Le commissioni si accumulano. E il tuo guadagno?</h1>
+      <p class="lead">Valutiamo la tua situazione, e al termine della consulenza ti diciamo subito se c'è utile recuperabile, poi la scelta di iniziare è tua, nessuna pressione.</p>
+    </div>
+
+    <form class="form-card" id="modulo-consulenza" novalidate>
+      <h3>Richiedi la tua consulenza</h3>
+
+      <div class="campo">
+        <label for="nome">Nome e cognome</label>
+        <input type="text" id="nome" name="nome" autocomplete="name" required>
+      </div>
+
+      <div class="campo">
+        <label for="struttura">Nome della struttura</label>
+        <input type="text" id="struttura" name="struttura" autocomplete="organization" required>
+      </div>
+
+      <div class="campo">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" autocomplete="email" required>
+      </div>
+
+      <div class="campo">
+        <label for="telefono">Telefono</label>
+        <input type="tel" id="telefono" name="telefono" autocomplete="tel" required>
+      </div>
+
+      <div class="campo">
+        <label for="urgenza">Quanto è urgente</label>
+        <select id="urgenza" name="urgenza" required>
+          <option value="" selected disabled>— Seleziona —</option>
+          <option value="subito">Il prima possibile</option>
+          <option value="1-mese">Entro un mese</option>
+          <option value="3-mesi">Nei prossimi 3 mesi</option>
+          <option value="valutando">Sto solo valutando</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn pieno">Invia la richiesta</button>
+    </form>
+
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="w">
+    <span><span class="logo" style="font-size:17px">HS Agency</span> · [RAGIONE SOCIALE · P.IVA · CONTATTI]</span>
+    <span><a href="#">Privacy policy</a> &nbsp;·&nbsp; <a href="#">Cookie policy</a></span>
+  </div>
+</footer>
+
+<script>
+// Solo per l'anteprima della tavola: evita che il bottone ricarichi la pagina.
+document.getElementById('modulo-consulenza').addEventListener('submit', function(e){ e.preventDefault(); });
+</script>
+</body>
+</html>

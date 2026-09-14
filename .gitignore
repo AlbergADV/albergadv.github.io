@@ -1,0 +1,9 @@
+# Dati sensibili
+acessi e codici.txt
+
+# OS
+Thumbs.db
+.DS_Store
+
+# Editor
+.vscode/

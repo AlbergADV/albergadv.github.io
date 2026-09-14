@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Tavola di lavoro, 14/09/2026. Giro largo: 20 combinazioni CTA+accento, fredde/calde/miste. Il box ora ha una velatura del colore d'accento invece del fondo avorio fisso. Materiale in ingresso: NON va online, non è una decisione presa. -->
+<title>Tavola — 20 combinazioni, fredde calde e miste</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+:root{
+  --bianco:#FFFFFF; --avorio:#F6F1E7; --bordo:#E6DECE;
+  --titolo:#1A1A18; --corpo:#4A4740;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --sans:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  --r:10px; --cor:5px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#EFECE4;color:var(--corpo);font-family:var(--sans);
+     font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.servizio{background:#1A1A18;color:#B9B4A8;font-size:12px;letter-spacing:.08em;
+          padding:10px 24px;text-align:center}
+
+.wrap{max-width:1400px;margin:0 auto;padding:36px 24px 90px}
+h1{font-family:var(--serif);font-weight:600;color:var(--titolo);font-size:26px;margin:0 0 10px}
+.intro{max-width:820px;font-size:14px;color:#6E6A61;margin-bottom:8px}
+.intro p{margin:0 0 8px}
+.intro b{color:var(--titolo)}
+.legenda{font-size:12.5px;color:#8B8579;margin-bottom:8px}
+
+h2.gruppo{font-family:var(--serif);font-weight:600;font-size:18px;color:var(--titolo);
+          margin:36px 0 14px;padding-top:24px;border-top:1px solid var(--bordo)}
+h2.gruppo:first-of-type{border-top:0;padding-top:0}
+.gruppo-nota{font-size:12.5px;color:#8B8579;margin:-8px 0 14px;max-width:700px}
+
+.griglia{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+@media (max-width:1100px){.griglia{grid-template-columns:repeat(2,1fr)}}
+@media (max-width:600px){.griglia{grid-template-columns:1fr}}
+
+.card{background:#fff;border:1px solid var(--bordo);border-radius:12px;padding:14px;
+      display:flex;flex-direction:column;gap:10px}
+.nome{font-family:var(--serif);font-weight:600;font-size:14px;color:var(--titolo);margin:0}
+.hex-riga{display:flex;gap:8px;font-family:ui-monospace,Consolas,monospace;font-size:10.5px;color:#8B8579}
+.hex-riga span{display:flex;align-items:center;gap:4px}
+.pallino{width:10px;height:10px;border-radius:50%;flex:none}
+
+.occhiello{font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.12em;
+           text-transform:uppercase;margin:0;color:var(--c)}
+
+.mini{position:relative;padding:12px;border-radius:var(--r);
+      background:color-mix(in srgb, var(--c) 12%, white);
+      display:flex;flex-direction:column;gap:4px}
+.mini::after{content:"";position:absolute;inset:var(--cor);pointer-events:none;
+     border-radius:calc(var(--r) - var(--cor));border:1px solid var(--c)}
+.mini h3{font-family:var(--serif);font-weight:600;font-size:13.5px;line-height:1.2;margin:0;color:var(--titolo)}
+.mini p{margin:0;font-size:11.5px;color:var(--corpo);line-height:1.35}
+
+.filetto{border-left:2.5px solid var(--c);padding:2px 0 2px 10px;font-family:var(--serif);
+         font-weight:600;font-size:13px;color:var(--titolo)}
+
+.riga-bassa{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:2px}
+.btn{position:relative;display:inline-flex;background:var(--cta);color:#fff;font-family:var(--sans);
+     font-weight:600;font-size:12px;padding:7px 14px;border-radius:7px}
+.numeri{font-size:9.5px;color:#8B8579;text-align:right;line-height:1.35}
+
+.chiusura{margin-top:40px;font-size:13px;color:#6E6A61;max-width:820px;line-height:1.55}
+.chiusura b{color:var(--titolo)}
+.chiusura p{margin:0 0 8px}
+</style>
+</head>
+<body>
+
+<div class="servizio">TAVOLA DI LAVORO — 20 combinazioni, giro largo — non va online — non è una decisione presa</div>
+
+<div class="wrap">
+  <h1>20 combinazioni — fredde, calde, miste</h1>
+  <div class="intro">
+    <p>Stessa logica di prima — <b>un colore per il CTA, uno per occhielli/linee/bordini/box</b> — ma qui il box non è più sempre avorio: il fondo del box è una velatura leggera (12%) dello stesso colore dell'accento. Prima l'avorio era il neutro del sito, uguale su ogni colore — per questo sembrava spento. Ora ogni combinazione ha anche il suo box colorato.</p>
+    <p>Il verde non c'è: lo avevi già scartato ("non piace nei box"), quando ancora il CTA era fisso sul navy. Se vuoi che lo rimetta in gioco ora che anche il CTA cambia, dimmelo.</p>
+  </div>
+  <p class="legenda">Tutte e venti passano il contrasto minimo (4,5:1) — bianco sul CTA, accento su bianco, accento su crema. I numeri sono sotto ogni bottone.</p>
+
+  <h2 class="gruppo">Fredde</h2>
+  <div class="griglia">
+
+    <div class="card" style="--c:#1F5C57;--cta:#1E4C8C">
+      <p class="nome">Blu reale + petrolio</p>
+      <div class="hex-riga"><span><span class="pallino" style="background:#1E4C8C"></span>#1E4C8C</span><span><span class="pallino" style="background:#1F5C57"></span>#1F5C57</span></div>
+      <p class="occhiello">Per hotel e strutture ricettive</p>
+      <div class="mini"><h3>La voce degli ospiti</h3><p>Ricaviamo i desideri dalle parole vere.</p></div>
+      <p class="filetto">Zero pensieri</p>
+      <div class="riga-bassa"><span class="btn">Consulenza gratuita</span><span class="numeri">8,5 · 7,7 · 6,8</span></div>
+    </div>
+
+    <div class="card" style="--c:#4A5A6B;--cta:#0A1F33">
+      <p class="nome">Blu notte + ardesia</p>
+      <div class="hex-riga"><span><span class="pallino" style="background:#0A1F33"></span>#0A1F33</span><span><span class="pallino" style="background:#4A5A6B"></span>#4A5A6B</span></div>
+      <p class="occhiello">Per hotel e strutture ricettive</p>
+      <div class="mini"><h3>La voce degli ospiti</h3><p>Ricaviamo i desideri dalle parole vere.</p></div>
+      <p class="filetto">Zero pensieri</p>
+      <div class="riga-bassa"><span class="btn">Consulenza gratuita</span><span class="numeri">16,7 · 7,1 · 6,3</span></div>
+    </div>
+
+    <div class="card" style="--c:#3D4A7A;--cta:#2C5578">
+      <p class="nome">Blu acciaio + indaco</p>
+      <div class="hex-riga"><span><span class="pallino" style="background:#2C5578"></span>#2C5578</span><span><span class="pallino" style="background:#3D4A7A"></span>#3D4A7A</span></div>
+      <p class="occhiello">Per hotel e strutture ricettive</p>
+      <div class="mini"><h3>La voce degli ospiti</h3><p>Ricaviamo i desideri dalle parole vere.</p></div>
+      <p class="filetto">Zero pensieri</p>
+      <div class="riga-bassa"><span class="btn">Consulenza gratuita</span><span class="numeri">7,8 · 8,5 · 7,6</span></div>
+    </div>
+
+    <div class="card" style="--c:#4A5A6B;--cta:#123F3B">
+      <p class="nome">Petrolio scuro + blu polvere</p>
+      <div class="hex-riga"><span><span class="pallino" style="background:#123F3B"></span>#123F3B</span><span><span class="pallino" style="background:#4A5A6B"></span>#4A5A6B</span></div>
+      <p class="occhiello">Per hotel e strutture ricettive</p>
+      <div class="mini"><h3>La voce degli ospiti</h3><p>Ricaviamo i desideri dalle parole vere.</p></div>
+      <p class="filetto">Zero pensieri</p>
+      <div class="riga-bassa"><span class="btn">Consulenza gratuita</span><span class="numeri">11,7 · 7,1 · 6,3</span></div>
+    </div>
+
+    <div class="card" style="--c:#5A6B7A;--cta:#4A2C55">
+      <p class="nome">Prugna + grigio-blu</p>
+      <div class="hex-riga"><span><span class="pallino" style="background:#4A2C55"></span>#4A2C55</span><span><span class="pallino" style="background:#5A6B7A"></span>#5A6B7A</span></div>
+      <p class="occhiello">Per hotel e strutture ricettive</p>
+      <div class="mini"><h3>La voce degli ospiti</h3><p>Ricaviamo i desideri dalle parole vere.</p></div>
+      <p class="filetto">Zero pensieri</p>
+      <div class="riga-bassa"><span class="btn">Consulenza gratuita</span><span class="numeri">11,8 · 5,5 · 4,9</span></div>
+    </div>
+
+    <div class="card" style="--c:#0E6E6B;--cta:#1F4C8C">
+      <p class="nome">Blu cobalto + petrolio chiaro</p>
+      <div class="hex-riga"><span><span class="pallino" style="background:#1F4C8C"></span>#1F4C8C</span><span><span class="pallino" style="background:#0E6E6B"></span>#0E6E6B</span></div>
+      <p class="occhiello">Per hotel e strutture ricettive</p>
+      <div class="mini"><h3>La voce degli ospiti</h3><p>Ricaviamo i desideri dalle parole vere.</p></div>
+      <p class="filetto">Zero pensieri</p>
+      <div class="riga-bassa"><span class="btn">Consulenza gratuita</span><span class="numeri">8,5 · 6,1 · 5,4</span></div>
+    </div>
+
+  </div>
+
+  <h2 class="gruppo">Calde</h2>
+  <div class="griglia">
+
+    <div class="card" style="--c:#8C6524;--cta:#6B2A3A">
+      <p class="nome">Bordeaux + ottone</p>
+      <div class="hex-riga"><span><span class="pallino" style="background:#6B2A3A"></span>#6B2A3A</span><span><span class="pallino" style="background:#8C6524"></span>#8C6524</span></div>
+      <p class="occhiello">Per hotel e strutture ricettive</p>
+      <div class="mini"><h3>La voce degli ospiti</h3><p>Ricaviamo i desideri dalle parole vere.</p></div>
+      <p class="filetto">Zero pensieri</p>
+      <div class="riga-bassa"><span class="btn">Consulenza gratuita</span><span class="numeri">10,4 · 5,3 · 4,7</span></div>
+    </div>
+
+    <div class="card" style="--c:#6B4226;--cta:#8C3A1E">
+      <p class="nome">Ruggine scura + cuoio</p>
+      <div class="hex-riga"><span><span class="pallino" style="background:#8C3A1E"></span>#8C3A1E</span><span><span class="pallino" style="background:#6B4226"></span>#6B4226</span></div>
+      <p class="occhiello">Per hotel e strutture ricettive</p>
+      <div class="mini"><h3>La voce degli ospiti</h3><p>Ricaviamo i desideri dalle parole vere.</p></div>
+      <p class="filetto">Zero pensieri</p>
+      <div class="riga-bassa"><span class="btn">Consulenza gratuita</span><span class="numeri">7,7 · 8,6 · 7,7</span></div>
+    </div>
+
+    <div class="card" style="--c:#7A5E1E;--cta:#6E3320">
+      <p class="nome">Terracotta scura + senape</p>
+      <div class="hex-riga"><span><span class="pallino" style="background:#6E3320"></span>#6E3320</span><span><span class="pallino" style="background:#7A5E1E"></span>#7A5E1E</span></div>
+      <p class="occhiello">Per hotel e strutture ricettive</p>
+      <div class="mini"><h3>La voce degli ospiti</h3><p>Ricaviamo i desideri dalle parole vere.</p></div>
+      <p class="filetto">Zero pensieri</p>
+      <div class="riga-bassa"><span class="btn">Consulenza gratuita</span><span class="numeri">9,7 · 6,1 · 5,4</span></div>
+    </div>
+
+    <div class="card" style="--c:#A34A1C;--cta:#7A2E42">
+      <p class="nome">Vinaccia + rame</p>
+      <div class="hex-riga"><span><span class="pallino" style="background:#7A2E42"></span>#7A2E42</span><span><span class="pallino" style="background:#A34A1C"></span>#A34A1C</span></div>
+      <p class="occhiello">Per hotel e strutture ricettive</p>
+      <div class="mini"><h3>La voce degli ospiti</h3><p>Ricaviamo i desideri dalle parole vere.</p></div>
+      <p class="filetto">Zero pensieri</p>
+      <div class="riga-bassa"><span class="btn">Consulenza gratuita</span><span class="numeri">9,1 · 5,9 · 5,3</span></div>
+    </div>
+
+    <div class="card" style="--c:#9A4A32;--cta:#4A2C1A">
+      <p class="nome">Cuoio scuro + terracotta</p>
+      <div class="hex-riga"><span><span class="pallino" style="background:#4A2C1A"></span>#4A2C1A</span><span><span class="pallino" style="background:#9A4A32"></span>#9A4A32</span></div>
+      <p class="occhiello">Per hotel e strutture ricettive</p>
+      <div class="mini"><h3>La voce degli ospiti</h3><p>Ricaviamo i desideri dalle parole vere.</p></div>
+      <p class="filetto">Zero pensieri</p>
+      <div class="riga-bassa"><span class="btn">Consulenza gratuita</span><span class="numeri">12,6 · 6,2 · 5,5</span></div>
+    </div>
+
+    <div class="card" style="--c:#7A5C3A;--cta:#5A2230">
+      <p class="nome">Bordeaux scuro + taupe</p>
+      <div class="hex-riga"><span><span class="pallino" style="background:#5A2230"></span>#5A2230</span><span><span class="pallino" style="background:#7A5C3A"></span>#7A5C3A</span></div>
+      <p class="occhiello">Per hotel e strutture ricettive</p>
+      <div class="mini"><h3>La voce degli ospiti</h3><p>Ricaviamo i desideri dalle parole vere.</p></div>
+      <p class="filetto">Zero pensieri</p>
+      <div class="riga-bassa"><span class="btn">Consulenza gratuita</span><span class="numeri">12,3 · 6,1 · 5,5</span></div>
+    </div>
+
+  </div>
+
+  <h2 class="gruppo">Miste — un caldo e un freddo insieme</h2>
+  <p class="gruppo-nota">Il gruppo con più contrasto fra i due colori: quello che nella prima tavola mancava.</p>
+  <div class="griglia">
+
+    <div class="card" style="--c:#9A4A32;--cta:#0A1F33">
+      <p class="nome">Blu notte + terracotta</p>
+      <div class="hex-riga"><span><span class="pallino" style="background:#0A1F33"></span>#0A1F33</span><span><span class="pallino" style="background:#9A4A32"></span>#9A4A32</span></div>
+      <p class="occhiello">Per hotel e strutture ricettive</p>
+      <div class="mini"><h3>La voce degli ospiti</h3><p>Ricaviamo i desideri dalle parole vere.</p></div>
+      <p class="filetto">Zero pensieri</p>
+      <div class="riga-bassa"><span class="btn">Consulenza gratuita</span><span class="numeri">16,7 · 6,2 · 5,5</span></div>
+    </div>
+
+    <div class="card" style="--c:#1F5C57;--cta:#6B2A3A">
+      <p class="nome">Bordeaux + petrolio</p>
+      <div class="hex-riga"><span><span class="pallino" style="background:#6B2A3A"></span>#6B2A3A</span><span><span class="pallino" style="background:#1F5C57"></span>#1F5C57</span></div>
+      <p class="occhiello">Per hotel e strutture ricettive</p>
+      <div class="mini"><h3>La voce degli ospiti</h3><p>Ricaviamo i desideri dalle parole vere.</p></div>
+      <p class="filetto">Zero pensieri</p>
+      <div class="riga-bassa"><span class="btn">Consulenza gratuita</span><span class="numeri">10,4 · 7,7 · 6,8</span></div>
+    </div>
+
+    <div class="card" style="--c:#4A5A6B;--cta:#8C3A1E">
+      <p class="nome">Ruggine + ardesia</p>
+      <div class="hex-riga"><span><span class="pallino" style="background:#8C3A1E"></span>#8C3A1E</span><span><span class="pallino" style="background:#4A5A6B"></span>#4A5A6B</span></div>
+      <p class="occhiello">Per hotel e strutture ricettive</p>
+      <div class="mini"><h3>La voce degli ospiti</h3><p>Ricaviamo i desideri dalle parole vere.</p></div>
+      <p class="filetto">Zero pensieri</p>
+      <div class="riga-bassa"><span class="btn">Consulenza gratuita</span><span class="numeri">7,7 · 7,1 · 6,3</span></div>
+    </div>
+
+    <div class="card" style="--c:#C14315;--cta:#123F3B">
+      <p class="nome">Petrolio + ruggine</p>
+      <div class="hex-riga"><span><span class="pallino" style="background:#123F3B"></span>#123F3B</span><span><span class="pallino" style="background:#C14315"></span>#C14315</span></div>
+      <p class="occhiello">Per hotel e strutture ricettive</p>
+      <div class="mini"><h3>La voce degli ospiti</h3><p>Ricaviamo i desideri dalle parole vere.</p></div>
+      <p class="filetto">Zero pensieri</p>
+      <div class="riga-bassa"><span class="btn">Consulenza gratuita</span><span class="numeri">11,7 · 5,2 · 4,6</span></div>
+    </div>
+
+    <div class="card" style="--c:#8C6524;--cta:#4A2C55">
+      <p class="nome">Prugna + ottone</p>
+      <div class="hex-riga"><span><span class="pallino" style="background:#4A2C55"></span>#4A2C55</span><span><span class="pallino" style="background:#8C6524"></span>#8C6524</span></div>
+      <p class="occhiello">Per hotel e strutture ricettive</p>
+      <div class="mini"><h3>La voce degli ospiti</h3><p>Ricaviamo i desideri dalle parole vere.</p></div>
+      <p class="filetto">Zero pensieri</p>
+      <div class="riga-bassa"><span class="btn">Consulenza gratuita</span><span class="numeri">11,8 · 5,3 · 4,7</span></div>
+    </div>
+
+    <div class="card" style="--c:#9A4A32;--cta:#2C5578">
+      <p class="nome">Blu acciaio + terracotta</p>
+      <div class="hex-riga"><span><span class="pallino" style="background:#2C5578"></span>#2C5578</span><span><span class="pallino" style="background:#9A4A32"></span>#9A4A32</span></div>
+      <p class="occhiello">Per hotel e strutture ricettive</p>
+      <div class="mini"><h3>La voce degli ospiti</h3><p>Ricaviamo i desideri dalle parole vere.</p></div>
+      <p class="filetto">Zero pensieri</p>
+      <div class="riga-bassa"><span class="btn">Consulenza gratuita</span><span class="numeri">7,8 · 6,2 · 5,5</span></div>
+    </div>
+
+    <div class="card" style="--c:#1F5C57;--cta:#2E2018">
+      <p class="nome">Testa di moro + petrolio</p>
+      <div class="hex-riga"><span><span class="pallino" style="background:#2E2018"></span>#2E2018</span><span><span class="pallino" style="background:#1F5C57"></span>#1F5C57</span></div>
+      <p class="occhiello">Per hotel e strutture ricettive</p>
+      <div class="mini"><h3>La voce degli ospiti</h3><p>Ricaviamo i desideri dalle parole vere.</p></div>
+      <p class="filetto">Zero pensieri</p>
+      <div class="riga-bassa"><span class="btn">Consulenza gratuita</span><span class="numeri">15,7 · 7,7 · 6,8</span></div>
+    </div>
+
+    <div class="card" style="--c:#C14315;--cta:#262524">
+      <p class="nome">Antracite + ruggine</p>
+      <div class="hex-riga"><span><span class="pallino" style="background:#262524"></span>#262524</span><span><span class="pallino" style="background:#C14315"></span>#C14315</span></div>
+      <p class="occhiello">Per hotel e strutture ricettive</p>
+      <div class="mini"><h3>La voce degli ospiti</h3><p>Ricaviamo i desideri dalle parole vere.</p></div>
+      <p class="filetto">Zero pensieri</p>
+      <div class="riga-bassa"><span class="btn">Consulenza gratuita</span><span class="numeri">15,3 · 5,2 · 4,6</span></div>
+    </div>
+
+  </div>
+
+  <div class="chiusura">
+    <p><b>Cosa resta uguale in tutte e venti.</b> Fondo pagina bianco, testo nero/grigio come oggi, stessa forma, stessa tipografia. Cambiano CTA, accento (occhiello/linee/bordini) e ora anche il fondo del box, che prende una velatura del colore d'accento invece dell'avorio fisso.</p>
+    <p><b>I tre numeri sotto ogni bottone:</b> bianco sul CTA · accento su bianco · accento su crema. Tutti sopra 4,5 — nessuno è "poco contrasto" per la lettura, anche dove i due colori della coppia sono vicini di tono fra loro.</p>
+  </div>
+</div>
+
+</body>
+</html>

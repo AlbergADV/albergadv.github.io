@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Tavola di lavoro, 14/09/2026. Ricerca sistematica: colori che reggono davvero sia su bianco/crema sia sul navy. Verde, blu, oro esclusi per motivo strutturale. Materiale in ingresso: NON va online, non è una decisione presa. -->
+<title>Tavola — colori che reggono anche sul navy</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+:root{
+  --bianco:#FFFFFF; --avorio:#F6F1E7; --bordo:#E6DECE;
+  --titolo:#1A1A18; --corpo:#4A4740;
+  --navy:#0F2440;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --sans:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  --r:10px; --cor:6px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#EFECE4;color:var(--corpo);font-family:var(--sans);font-size:16px;line-height:1.5}
+.servizio{background:#1A1A18;color:#B9B4A8;font-size:12px;letter-spacing:.08em;padding:10px 24px;text-align:center}
+.wrap{max-width:1180px;margin:0 auto;padding:36px 24px 80px}
+h1{font-family:var(--serif);font-weight:600;color:var(--titolo);font-size:26px;margin:0 0 8px}
+.intro{max-width:700px;font-size:14.5px;color:#6E6A61;margin-bottom:28px}
+.intro b{color:var(--titolo)}
+
+.griglia{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media (max-width:900px){.griglia{grid-template-columns:1fr}}
+
+.colonna{background:#fff;border:1px solid var(--bordo);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:14px}
+.intestazione{display:flex;align-items:baseline;justify-content:space-between;gap:8px;padding-bottom:12px;border-bottom:1px solid var(--bordo)}
+.nome{font-family:var(--serif);font-weight:600;font-size:16px;color:var(--titolo)}
+.hex{font-family:ui-monospace,Consolas,monospace;font-size:12px;color:#8B8579}
+
+.numeri{display:flex;gap:8px;flex-wrap:wrap}
+.numero{font-size:11px;background:#F0EEE8;border-radius:6px;padding:3px 8px;color:#4A4740}
+.numero b{color:#1A7A3E}
+
+.occhiello{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;margin:0}
+
+.mini{position:relative;padding:16px;border-radius:var(--r);display:flex;flex-direction:column;gap:6px}
+.mini::after{content:"";position:absolute;inset:var(--cor);pointer-events:none;border-radius:calc(var(--r) - var(--cor));border:2px solid var(--c)}
+.mini .n{font-family:var(--serif);font-size:14px;font-weight:600;color:var(--c)}
+.mini h3{font-family:var(--serif);font-weight:600;font-size:16px;line-height:1.2;margin:0;color:var(--titolo)}
+.mini p{margin:0;font-size:13px;color:var(--corpo);line-height:1.4}
+.etich{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8B8579}
+
+.riferimento{display:flex;align-items:center;gap:10px;padding-top:12px;border-top:1px dashed var(--bordo)}
+.btn{position:relative;display:inline-flex;background:var(--navy);color:#fff;font-family:var(--sans);font-weight:600;font-size:14px;padding:9px 18px;border-radius:8px}
+.btn::after{content:"";position:absolute;inset:5px;pointer-events:none;border-radius:6px;border:2px solid var(--c)}
+.riferimento span{font-size:12px;color:#6E6A61}
+</style>
+</head>
+<body>
+
+<div class="servizio">TAVOLA DI LAVORO — colori verificati sul navy, non solo sul bianco — non va online — non è una decisione presa</div>
+
+<div class="wrap">
+  <h1>Tre colori che reggono anche sul bottone</h1>
+  <p class="intro">Questa volta i numeri sono nella tavola, non solo nel messaggio. Tutti e tre passano <b>bianco ≥4,5</b>, <b>crema ≥4,5</b> (soglia testo) e <b>navy ≥3,0</b> (soglia bordo/oggetto) — la cornice sul bottone qui si vede davvero, non solo sui box.</p>
+
+  <div class="griglia">
+
+    <div class="colonna" style="--c:#CC3333">
+      <div class="intestazione"><span class="nome">Rosso mattone</span><span class="hex">#CC3333</span></div>
+      <div class="numeri"><span class="numero">bianco <b>5,14</b></span><span class="numero">crema <b>4,56</b></span><span class="numero">navy <b>3,04</b></span></div>
+      <p class="occhiello" style="color:#CC3333">Per hotel e strutture ricettive</p>
+      <div><p class="etich">box che era crema</p><div class="mini" style="background:#FBE6E2"><span class="n">01</span><h3>La voce degli ospiti</h3><p>Ricaviamo i desideri dalle parole vere dei tuoi ospiti.</p></div></div>
+      <div class="riferimento"><span class="btn">Consulenza gratuita</span><span>cornice visibile sul navy</span></div>
+      <p style="font-size:12px;color:#9A4A32">Rischio: è il più vicino al rosso che usa Gourmet Marketing.</p>
+    </div>
+
+    <div class="colonna" style="--c:#C14315">
+      <div class="intestazione"><span class="nome">Ruggine</span><span class="hex">#C14315</span></div>
+      <div class="numeri"><span class="numero">bianco <b>5,15</b></span><span class="numero">crema <b>4,57</b></span><span class="numero">navy <b>3,03</b></span></div>
+      <p class="occhiello" style="color:#C14315">Per hotel e strutture ricettive</p>
+      <div><p class="etich">box che era crema</p><div class="mini" style="background:#F9E4D9"><span class="n">01</span><h3>La voce degli ospiti</h3><p>Ricaviamo i desideri dalle parole vere dei tuoi ospiti.</p></div></div>
+      <div class="riferimento"><span class="btn">Consulenza gratuita</span><span>cornice visibile sul navy</span></div>
+      <p style="font-size:12px;color:#6E6A61">Più acceso degli altri due, distante sia dal rosso che dall'oro.</p>
+    </div>
+
+    <div class="colonna" style="--c:#995F33">
+      <div class="intestazione"><span class="nome">Terracotta scura</span><span class="hex">#995F33</span></div>
+      <div class="numeri"><span class="numero">bianco <b>5,20</b></span><span class="numero">crema <b>4,62</b></span><span class="numero">navy <b>3,00</b></span></div>
+      <p class="occhiello" style="color:#995F33">Per hotel e strutture ricettive</p>
+      <div><p class="etich">box che era crema</p><div class="mini" style="background:#EFE3DA"><span class="n">01</span><h3>La voce degli ospiti</h3><p>Ricaviamo i desideri dalle parole vere dei tuoi ospiti.</p></div></div>
+      <div class="riferimento"><span class="btn">Consulenza gratuita</span><span>cornice visibile sul navy (al limite)</span></div>
+      <p style="font-size:12px;color:#6E6A61">Il più tenue dei tre, il più vicino a un marrone caldo elegante.</p>
+    </div>
+
+  </div>
+
+  <p style="margin-top:24px;font-size:13px;color:#6E6A61;max-width:700px">
+  Fuori da questo terzetto restano solo rosa/magenta acceso (poco adatto a un hotel B2B) o un giallo-oliva vicino all'oro già scartato. Non li ho messi in tavola.
+  </p>
+</div>
+
+</body>
+</html>

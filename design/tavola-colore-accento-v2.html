@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Tavola di lavoro, 14/09/2026. Il verde è stato scartato: non va bene col navy, non piace nei box. Tre alternative calde, stesso sistema deciso (box crema->colorato, box bianco invariato, cornice 2px, occhiello 700). Materiale in ingresso: NON va online, non è una decisione presa. -->
+<title>Tavola — dopo il verde, tre alternative calde</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+:root{
+  --bianco:#FFFFFF; --avorio:#F6F1E7; --bordo:#E6DECE;
+  --titolo:#1A1A18; --corpo:#4A4740;
+  --navy:#0F2440;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --sans:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  --r:10px; --cor:6px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#EFECE4;color:var(--corpo);font-family:var(--sans);
+     font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.servizio{background:#1A1A18;color:#B9B4A8;font-size:12px;letter-spacing:.08em;padding:10px 24px;text-align:center}
+.wrap{max-width:1180px;margin:0 auto;padding:36px 24px 80px}
+h1{font-family:var(--serif);font-weight:600;color:var(--titolo);font-size:26px;margin:0 0 8px}
+.intro{max-width:680px;font-size:14.5px;color:#6E6A61;margin-bottom:28px}
+.intro b{color:var(--titolo)}
+
+.griglia{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media (max-width:900px){.griglia{grid-template-columns:1fr}}
+
+.colonna{background:#fff;border:1px solid var(--bordo);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:14px}
+.intestazione{display:flex;align-items:baseline;justify-content:space-between;gap:8px;padding-bottom:12px;border-bottom:1px solid var(--bordo)}
+.nome{font-family:var(--serif);font-weight:600;font-size:16px;color:var(--titolo)}
+.hex{font-family:ui-monospace,Consolas,monospace;font-size:12px;color:#8B8579}
+
+.occhiello{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;margin:0}
+
+.mini{position:relative;padding:16px;border-radius:var(--r);display:flex;flex-direction:column;gap:6px}
+.mini::after{content:"";position:absolute;inset:var(--cor);pointer-events:none;
+     border-radius:calc(var(--r) - var(--cor));border:2px solid var(--c)}
+.mini .n{font-family:var(--serif);font-size:14px;font-weight:600;color:var(--c)}
+.mini h3{font-family:var(--serif);font-weight:600;font-size:16px;line-height:1.2;margin:0;color:var(--titolo)}
+.mini p{margin:0;font-size:13px;color:var(--corpo);line-height:1.4}
+
+.etich{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8B8579}
+
+.riferimento{display:flex;align-items:center;gap:10px;padding-top:12px;border-top:1px dashed var(--bordo)}
+.btn{position:relative;display:inline-flex;background:var(--navy);color:#fff;font-family:var(--sans);
+     font-weight:600;font-size:14px;padding:9px 18px;border-radius:8px}
+.btn::after{content:"";position:absolute;inset:5px;pointer-events:none;border-radius:6px;border:2px solid var(--c)}
+.riferimento span{font-size:12px;color:#6E6A61}
+</style>
+</head>
+<body>
+
+<div class="servizio">TAVOLA DI LAVORO — il verde è scartato, tre alternative calde — non va online — non è una decisione presa</div>
+
+<div class="wrap">
+  <h1>Il verde è fuori. Tre colori caldi, non nella famiglia del blu</h1>
+  <p class="intro">Il verde stona col navy ed è vicino a lui sulla ruota dei colori — sono entrambi freddi. Qui tre colori caldi, che dovrebbero staccare meglio. Stesso sistema di ieri: <b>box che erano crema diventano colorati, box bianchi restano bianchi</b>, cornice da 2px, occhiello pesante.</p>
+
+  <div class="griglia">
+
+    <div class="colonna" style="--c:#9A4A32">
+      <div class="intestazione"><span class="nome">Terracotta</span><span class="hex">#9A4A32</span></div>
+      <p class="occhiello" style="color:#9A4A32">Per hotel e strutture ricettive</p>
+      <div>
+        <p class="etich">box che era crema</p>
+        <div class="mini" style="background:#F0E4E0"><span class="n">01</span><h3>La voce degli ospiti</h3><p>Ricaviamo i desideri dalle parole vere dei tuoi ospiti.</p></div>
+      </div>
+      <div>
+        <p class="etich">box che era bianco — invariato</p>
+        <div class="mini" style="background:#fff;border:1px solid #E6DECE"><span class="n" style="color:var(--titolo)">Contatto diretto</span></div>
+      </div>
+      <div class="riferimento"><span class="btn">Consulenza gratuita</span><span>bottone navy, cornice nel colore</span></div>
+    </div>
+
+    <div class="colonna" style="--c:#6B2A3A">
+      <div class="intestazione"><span class="nome">Bordeaux (vinaccia)</span><span class="hex">#6B2A3A</span></div>
+      <p class="occhiello" style="color:#6B2A3A">Per hotel e strutture ricettive</p>
+      <div>
+        <p class="etich">box che era crema</p>
+        <div class="mini" style="background:#E9DFE1"><span class="n">01</span><h3>La voce degli ospiti</h3><p>Ricaviamo i desideri dalle parole vere dei tuoi ospiti.</p></div>
+      </div>
+      <div>
+        <p class="etich">box che era bianco — invariato</p>
+        <div class="mini" style="background:#fff;border:1px solid #E6DECE"><span class="n" style="color:var(--titolo)">Contatto diretto</span></div>
+      </div>
+      <div class="riferimento"><span class="btn">Consulenza gratuita</span><span>bottone navy, cornice nel colore</span></div>
+    </div>
+
+    <div class="colonna" style="--c:#6B4226">
+      <div class="intestazione"><span class="nome">Cuoio</span><span class="hex">#6B4226</span></div>
+      <p class="occhiello" style="color:#6B4226">Per hotel e strutture ricettive</p>
+      <div>
+        <p class="etich">box che era crema</p>
+        <div class="mini" style="background:#E9E3DE"><span class="n">01</span><h3>La voce degli ospiti</h3><p>Ricaviamo i desideri dalle parole vere dei tuoi ospiti.</p></div>
+      </div>
+      <div>
+        <p class="etich">box che era bianco — invariato</p>
+        <div class="mini" style="background:#fff;border:1px solid #E6DECE"><span class="n" style="color:var(--titolo)">Contatto diretto</span></div>
+      </div>
+      <div class="riferimento"><span class="btn">Consulenza gratuita</span><span>bottone navy, cornice nel colore</span></div>
+    </div>
+
+  </div>
+
+  <p style="margin-top:28px;font-size:13px;color:#6E6A61;max-width:680px">
+  Nota tecnica, vale per tutti e tre: sul bottone navy, essendo colori scuri su fondo scuro, la cornice si vede meno bene delle linee sui box chiari — è lo stesso limite che aveva il verde. Non è un problema del colore scelto, è che nessun colore scuro risalta su un fondo scuro. Prima del verde, quella cornice era bianca proprio per questo. Se il colore che scegli ti piace ma lì si vede poco, si può tenere quella singola cornice bianca e il resto colorato, senza cambiare altro.
+  </p>
+</div>
+
+</body>
+</html>

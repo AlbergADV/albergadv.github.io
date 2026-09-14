@@ -1,0 +1,789 @@
+<!doctype html>
+<html lang="it"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Accento e linea del CTA — landing hotel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;600&family=Source+Serif+4:opsz,wght@8..60,600&display=swap" rel="stylesheet">
+<style>
+:root{--titolo:#1A1A18;--corpo:#4A4740;--cta:#003153;--bianco:#FFFFFF;--avorio:#F6F1E7;
+ --serif:"Source Serif 4",Georgia,serif;--sans:"Source Sans 3","Segoe UI",system-ui,sans-serif;--r:10px;--cor:6px}
+*{box-sizing:border-box}
+body{margin:0;background:#E9E7E2;color:var(--corpo);font-family:var(--sans);font-size:16px;line-height:1.5}
+.w{max-width:1280px;margin:0 auto;padding:40px 24px 80px}
+h1{font-family:var(--serif);font-size:34px;line-height:1.15;color:var(--titolo);margin:0 0 10px}
+.intro{max-width:760px;margin:0 0 10px}
+.regola{max-width:760px;margin:0 0 24px;font-size:14px;color:#6E6A61}
+.fisso{display:flex;flex-wrap:wrap;gap:10px 18px;align-items:center;background:#fff;border:1px solid #D9D5CC;
+ border-radius:12px;padding:14px 18px;margin-bottom:14px;font-size:13.5px;color:#6E6A61}
+.fisso b{color:var(--titolo);font-weight:600}
+.fisso span{display:inline-flex;align-items:center;gap:7px}
+.fisso i{width:14px;height:14px;border-radius:4px;border:1px solid rgba(0,0,0,.15);display:inline-block}
+.gruppo{font-family:var(--serif);font-size:24px;color:var(--titolo);margin:44px 0 2px}
+.gdesc{font-size:14px;color:#6E6A61;margin:0 0 18px}
+.griglia{display:grid;grid-template-columns:repeat(auto-fill,minmax(380px,1fr));gap:22px}
+.combo{border:1px solid #D9D5CC;border-radius:12px;overflow:hidden;background:#fff}
+.testa{display:flex;align-items:baseline;gap:10px;padding:12px 16px;border-bottom:1px solid #E4E0D8}
+.testa .num{font-size:12px;font-weight:600;color:#8B8579;letter-spacing:.08em}
+.testa .nome{font-family:var(--serif);font-weight:600;font-size:17px;color:var(--titolo)}
+.testa .hexacc{margin-left:auto;font-size:11.5px;color:#8B8579}
+.et{font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:#B9B4A8;margin:0 0 12px}
+.su-bianco{background:var(--bianco);padding:20px 22px 24px}
+.su-avorio{background:var(--avorio);padding:20px 22px 22px}
+.sfuma{height:34px;background:linear-gradient(to bottom,var(--bianco),var(--avorio))}
+.occhiello{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--acc);margin:0 0 10px}
+.combo h3{font-family:var(--serif);font-weight:600;font-size:22px;line-height:1.18;color:var(--titolo);margin:0 0 8px;letter-spacing:-.005em}
+.lead{font-size:15px;color:var(--corpo);margin:0 0 18px}
+.attributi{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.attr{border-top:2px solid var(--acc);padding-top:8px}
+.attr p{margin:0;font-family:var(--serif);font-weight:600;font-size:15px;color:var(--titolo)}
+.box{position:relative;background:#fff;border:1px solid var(--acc);border-radius:var(--r);padding:20px 18px;margin-bottom:20px}
+.box::after{content:"";position:absolute;inset:var(--cor);border:1px solid var(--acc);opacity:.35;border-radius:calc(var(--r) - var(--cor));pointer-events:none}
+.box .n{display:block;font-size:12px;font-weight:600;letter-spacing:.1em;color:var(--acc);margin-bottom:4px}
+.box h4{font-family:var(--serif);font-weight:600;font-size:17px;color:var(--titolo);margin:0 0 4px}
+.box p{margin:0;font-size:14px;color:var(--corpo)}
+.btn{position:relative;display:inline-block;background:var(--cta);color:#fff;font-weight:600;font-size:15px;
+ padding:13px 26px;border-radius:var(--r);text-decoration:none}
+.btn::after{content:"";position:absolute;inset:var(--cor);border:1px solid var(--lin);border-radius:calc(var(--r) - var(--cor))}
+.notalinea{margin:10px 0 0;font-size:11.5px;color:#8B8579}
+.hex{display:flex;flex-wrap:wrap;gap:6px 14px;padding:11px 16px;background:#FBFAF7;border-top:1px solid #E4E0D8;font-size:11.5px;color:#6E6A61}
+.hex span{display:inline-flex;align-items:center;gap:6px}
+.hex i{width:11px;height:11px;border-radius:3px;border:1px solid rgba(0,0,0,.15);display:inline-block}
+.hex .cn{margin-left:auto;color:#8B8579}
+@media(max-width:520px){.w{padding:24px 14px 50px}.griglia{grid-template-columns:1fr}}
+</style></head><body>
+<div class="w">
+<h1>Accento e linea del CTA</h1>
+<p class="intro">Ventiquattro accenti in cinque famiglie di colore. Cambia il colore di occhielli, filetti, numeri, bordi del box <b>e della linea dentro il bottone</b>. Tutto il resto &egrave; fissato.</p>
+<div class="fisso">
+  <b>Fisso in tutte:</b>
+  <span><i style="background:#003153"></i>CTA blu di Prussia #003153</span>
+  <span><i style="background:#FFFFFF"></i>fondo bianco</span>
+  <span><i style="background:#F6F1E7"></i>fondo avorio #F6F1E7</span>
+  <span><i style="background:#FFFFFF"></i>dentro il box sempre bianco</span>
+  <span><i style="background:#1A1A18"></i>titoli #1A1A18</span>
+  <span><i style="background:#4A4740"></i>corpo #4A4740</span>
+</div>
+<p class="regola">La linea dentro il bottone prende l'accento. Dove l'accento &egrave; troppo scuro per vedersi sul blu, la linea usa lo stesso colore schiarito: sotto ogni bottone c'&egrave; scritto di quanto. I numeri in fondo sono il contrasto dell'accento sui due fondi: sopra 4,5 l'occhiello piccolo si legge senza fatica.</p>
+<h2 class="gruppo">Terre e bruni</h2><p class="gdesc">Bruni e rossi di terra. Scaldano senza brillare.</p><div class="griglia">
+<article class="combo" style="--acc:#9A4A32;--lin:#AE6E5B">
+  <header class="testa"><span class="num">01</span><span class="nome">Terracotta</span><span class="hexacc">#9A4A32</span></header>
+  <div class="su-bianco">
+    <p class="et">su bianco</p>
+    <p class="occhiello">Per hotel e strutture ricettive</p>
+    <h3>Meno commissioni, pi&ugrave; prenotazioni dirette</h3>
+    <p class="lead">Portiamo gli ospiti a prenotare dal tuo sito, non dai portali.</p>
+    <div class="attributi">
+      <div class="attr"><p>Zero pensieri</p></div>
+      <div class="attr"><p>Risultati subito</p></div>
+    </div>
+  </div>
+  <div class="sfuma"></div>
+  <div class="su-avorio">
+    <p class="et">su avorio</p>
+    <p class="occhiello">Il metodo</p>
+    <div class="box">
+      <span class="n">01</span>
+      <h4>La voce degli ospiti</h4>
+      <p>Ricaviamo i desideri dalle parole vere delle recensioni.</p>
+    </div>
+    <a class="btn" href="#">Consulenza gratuita</a>
+    <p class="notalinea">linea nel bottone #AE6E5B &mdash; accento schiarito del 20%</p>
+  </div>
+  <footer class="hex">
+    <span><i style="background:#9A4A32"></i>accento #9A4A32</span>
+    <span><i style="background:#AE6E5B"></i>linea CTA #AE6E5B</span>
+    <span class="cn">6.2:1 su bianco &middot; 5.5:1 su avorio</span>
+  </footer>
+</article>
+<article class="combo" style="--acc:#96522B;--lin:#A66C4B">
+  <header class="testa"><span class="num">02</span><span class="nome">Rame</span><span class="hexacc">#96522B</span></header>
+  <div class="su-bianco">
+    <p class="et">su bianco</p>
+    <p class="occhiello">Per hotel e strutture ricettive</p>
+    <h3>Meno commissioni, pi&ugrave; prenotazioni dirette</h3>
+    <p class="lead">Portiamo gli ospiti a prenotare dal tuo sito, non dai portali.</p>
+    <div class="attributi">
+      <div class="attr"><p>Zero pensieri</p></div>
+      <div class="attr"><p>Risultati subito</p></div>
+    </div>
+  </div>
+  <div class="sfuma"></div>
+  <div class="su-avorio">
+    <p class="et">su avorio</p>
+    <p class="occhiello">Il metodo</p>
+    <div class="box">
+      <span class="n">01</span>
+      <h4>La voce degli ospiti</h4>
+      <p>Ricaviamo i desideri dalle parole vere delle recensioni.</p>
+    </div>
+    <a class="btn" href="#">Consulenza gratuita</a>
+    <p class="notalinea">linea nel bottone #A66C4B &mdash; accento schiarito del 15%</p>
+  </div>
+  <footer class="hex">
+    <span><i style="background:#96522B"></i>accento #96522B</span>
+    <span><i style="background:#A66C4B"></i>linea CTA #A66C4B</span>
+    <span class="cn">5.9:1 su bianco &middot; 5.3:1 su avorio</span>
+  </footer>
+</article>
+<article class="combo" style="--acc:#6B4226;--lin:#90715C">
+  <header class="testa"><span class="num">03</span><span class="nome">Cuoio</span><span class="hexacc">#6B4226</span></header>
+  <div class="su-bianco">
+    <p class="et">su bianco</p>
+    <p class="occhiello">Per hotel e strutture ricettive</p>
+    <h3>Meno commissioni, pi&ugrave; prenotazioni dirette</h3>
+    <p class="lead">Portiamo gli ospiti a prenotare dal tuo sito, non dai portali.</p>
+    <div class="attributi">
+      <div class="attr"><p>Zero pensieri</p></div>
+      <div class="attr"><p>Risultati subito</p></div>
+    </div>
+  </div>
+  <div class="sfuma"></div>
+  <div class="su-avorio">
+    <p class="et">su avorio</p>
+    <p class="occhiello">Il metodo</p>
+    <div class="box">
+      <span class="n">01</span>
+      <h4>La voce degli ospiti</h4>
+      <p>Ricaviamo i desideri dalle parole vere delle recensioni.</p>
+    </div>
+    <a class="btn" href="#">Consulenza gratuita</a>
+    <p class="notalinea">linea nel bottone #90715C &mdash; accento schiarito del 25%</p>
+  </div>
+  <footer class="hex">
+    <span><i style="background:#6B4226"></i>accento #6B4226</span>
+    <span><i style="background:#90715C"></i>linea CTA #90715C</span>
+    <span class="cn">8.6:1 su bianco &middot; 7.7:1 su avorio</span>
+  </footer>
+</article>
+<article class="combo" style="--acc:#8E3B2A;--lin:#AA6C5F">
+  <header class="testa"><span class="num">04</span><span class="nome">Mattone</span><span class="hexacc">#8E3B2A</span></header>
+  <div class="su-bianco">
+    <p class="et">su bianco</p>
+    <p class="occhiello">Per hotel e strutture ricettive</p>
+    <h3>Meno commissioni, pi&ugrave; prenotazioni dirette</h3>
+    <p class="lead">Portiamo gli ospiti a prenotare dal tuo sito, non dai portali.</p>
+    <div class="attributi">
+      <div class="attr"><p>Zero pensieri</p></div>
+      <div class="attr"><p>Risultati subito</p></div>
+    </div>
+  </div>
+  <div class="sfuma"></div>
+  <div class="su-avorio">
+    <p class="et">su avorio</p>
+    <p class="occhiello">Il metodo</p>
+    <div class="box">
+      <span class="n">01</span>
+      <h4>La voce degli ospiti</h4>
+      <p>Ricaviamo i desideri dalle parole vere delle recensioni.</p>
+    </div>
+    <a class="btn" href="#">Consulenza gratuita</a>
+    <p class="notalinea">linea nel bottone #AA6C5F &mdash; accento schiarito del 25%</p>
+  </div>
+  <footer class="hex">
+    <span><i style="background:#8E3B2A"></i>accento #8E3B2A</span>
+    <span><i style="background:#AA6C5F"></i>linea CTA #AA6C5F</span>
+    <span class="cn">7.5:1 su bianco &middot; 6.6:1 su avorio</span>
+  </footer>
+</article>
+<article class="combo" style="--acc:#7D6446;--lin:#8A7458">
+  <header class="testa"><span class="num">05</span><span class="nome">Tabacco</span><span class="hexacc">#7D6446</span></header>
+  <div class="su-bianco">
+    <p class="et">su bianco</p>
+    <p class="occhiello">Per hotel e strutture ricettive</p>
+    <h3>Meno commissioni, pi&ugrave; prenotazioni dirette</h3>
+    <p class="lead">Portiamo gli ospiti a prenotare dal tuo sito, non dai portali.</p>
+    <div class="attributi">
+      <div class="attr"><p>Zero pensieri</p></div>
+      <div class="attr"><p>Risultati subito</p></div>
+    </div>
+  </div>
+  <div class="sfuma"></div>
+  <div class="su-avorio">
+    <p class="et">su avorio</p>
+    <p class="occhiello">Il metodo</p>
+    <div class="box">
+      <span class="n">01</span>
+      <h4>La voce degli ospiti</h4>
+      <p>Ricaviamo i desideri dalle parole vere delle recensioni.</p>
+    </div>
+    <a class="btn" href="#">Consulenza gratuita</a>
+    <p class="notalinea">linea nel bottone #8A7458 &mdash; accento schiarito del 10%</p>
+  </div>
+  <footer class="hex">
+    <span><i style="background:#7D6446"></i>accento #7D6446</span>
+    <span><i style="background:#8A7458"></i>linea CTA #8A7458</span>
+    <span class="cn">5.6:1 su bianco &middot; 4.9:1 su avorio</span>
+  </footer>
+</article></div><h2 class="gruppo">Ori e gialli</h2><p class="gdesc">Il registro dell'ottone, in quattro gradazioni diverse.</p><div class="griglia">
+<article class="combo" style="--acc:#8C6524;--lin:#98743A">
+  <header class="testa"><span class="num">06</span><span class="nome">Ottone scuro (quello di oggi)</span><span class="hexacc">#8C6524</span></header>
+  <div class="su-bianco">
+    <p class="et">su bianco</p>
+    <p class="occhiello">Per hotel e strutture ricettive</p>
+    <h3>Meno commissioni, pi&ugrave; prenotazioni dirette</h3>
+    <p class="lead">Portiamo gli ospiti a prenotare dal tuo sito, non dai portali.</p>
+    <div class="attributi">
+      <div class="attr"><p>Zero pensieri</p></div>
+      <div class="attr"><p>Risultati subito</p></div>
+    </div>
+  </div>
+  <div class="sfuma"></div>
+  <div class="su-avorio">
+    <p class="et">su avorio</p>
+    <p class="occhiello">Il metodo</p>
+    <div class="box">
+      <span class="n">01</span>
+      <h4>La voce degli ospiti</h4>
+      <p>Ricaviamo i desideri dalle parole vere delle recensioni.</p>
+    </div>
+    <a class="btn" href="#">Consulenza gratuita</a>
+    <p class="notalinea">linea nel bottone #98743A &mdash; accento schiarito del 10%</p>
+  </div>
+  <footer class="hex">
+    <span><i style="background:#8C6524"></i>accento #8C6524</span>
+    <span><i style="background:#98743A"></i>linea CTA #98743A</span>
+    <span class="cn">5.2:1 su bianco &middot; 4.7:1 su avorio</span>
+  </footer>
+</article>
+<article class="combo" style="--acc:#8C6014;--lin:#9D7837">
+  <header class="testa"><span class="num">07</span><span class="nome">Ambra bruciata</span><span class="hexacc">#8C6014</span></header>
+  <div class="su-bianco">
+    <p class="et">su bianco</p>
+    <p class="occhiello">Per hotel e strutture ricettive</p>
+    <h3>Meno commissioni, pi&ugrave; prenotazioni dirette</h3>
+    <p class="lead">Portiamo gli ospiti a prenotare dal tuo sito, non dai portali.</p>
+    <div class="attributi">
+      <div class="attr"><p>Zero pensieri</p></div>
+      <div class="attr"><p>Risultati subito</p></div>
+    </div>
+  </div>
+  <div class="sfuma"></div>
+  <div class="su-avorio">
+    <p class="et">su avorio</p>
+    <p class="occhiello">Il metodo</p>
+    <div class="box">
+      <span class="n">01</span>
+      <h4>La voce degli ospiti</h4>
+      <p>Ricaviamo i desideri dalle parole vere delle recensioni.</p>
+    </div>
+    <a class="btn" href="#">Consulenza gratuita</a>
+    <p class="notalinea">linea nel bottone #9D7837 &mdash; accento schiarito del 15%</p>
+  </div>
+  <footer class="hex">
+    <span><i style="background:#8C6014"></i>accento #8C6014</span>
+    <span><i style="background:#9D7837"></i>linea CTA #9D7837</span>
+    <span class="cn">5.5:1 su bianco &middot; 4.9:1 su avorio</span>
+  </footer>
+</article>
+<article class="combo" style="--acc:#7E6A10;--lin:#8B7928">
+  <header class="testa"><span class="num">08</span><span class="nome">Senape scura</span><span class="hexacc">#7E6A10</span></header>
+  <div class="su-bianco">
+    <p class="et">su bianco</p>
+    <p class="occhiello">Per hotel e strutture ricettive</p>
+    <h3>Meno commissioni, pi&ugrave; prenotazioni dirette</h3>
+    <p class="lead">Portiamo gli ospiti a prenotare dal tuo sito, non dai portali.</p>
+    <div class="attributi">
+      <div class="attr"><p>Zero pensieri</p></div>
+      <div class="attr"><p>Risultati subito</p></div>
+    </div>
+  </div>
+  <div class="sfuma"></div>
+  <div class="su-avorio">
+    <p class="et">su avorio</p>
+    <p class="occhiello">Il metodo</p>
+    <div class="box">
+      <span class="n">01</span>
+      <h4>La voce degli ospiti</h4>
+      <p>Ricaviamo i desideri dalle parole vere delle recensioni.</p>
+    </div>
+    <a class="btn" href="#">Consulenza gratuita</a>
+    <p class="notalinea">linea nel bottone #8B7928 &mdash; accento schiarito del 10%</p>
+  </div>
+  <footer class="hex">
+    <span><i style="background:#7E6A10"></i>accento #7E6A10</span>
+    <span><i style="background:#8B7928"></i>linea CTA #8B7928</span>
+    <span class="cn">5.3:1 su bianco &middot; 4.7:1 su avorio</span>
+  </footer>
+</article>
+<article class="combo" style="--acc:#7F6A2E;--lin:#8C7943">
+  <header class="testa"><span class="num">09</span><span class="nome">Oro antico spento</span><span class="hexacc">#7F6A2E</span></header>
+  <div class="su-bianco">
+    <p class="et">su bianco</p>
+    <p class="occhiello">Per hotel e strutture ricettive</p>
+    <h3>Meno commissioni, pi&ugrave; prenotazioni dirette</h3>
+    <p class="lead">Portiamo gli ospiti a prenotare dal tuo sito, non dai portali.</p>
+    <div class="attributi">
+      <div class="attr"><p>Zero pensieri</p></div>
+      <div class="attr"><p>Risultati subito</p></div>
+    </div>
+  </div>
+  <div class="sfuma"></div>
+  <div class="su-avorio">
+    <p class="et">su avorio</p>
+    <p class="occhiello">Il metodo</p>
+    <div class="box">
+      <span class="n">01</span>
+      <h4>La voce degli ospiti</h4>
+      <p>Ricaviamo i desideri dalle parole vere delle recensioni.</p>
+    </div>
+    <a class="btn" href="#">Consulenza gratuita</a>
+    <p class="notalinea">linea nel bottone #8C7943 &mdash; accento schiarito del 10%</p>
+  </div>
+  <footer class="hex">
+    <span><i style="background:#7F6A2E"></i>accento #7F6A2E</span>
+    <span><i style="background:#8C7943"></i>linea CTA #8C7943</span>
+    <span class="cn">5.2:1 su bianco &middot; 4.7:1 su avorio</span>
+  </footer>
+</article></div><h2 class="gruppo">Rossi e viola</h2><p class="gdesc">Rossi profondi e viola. Il registro piu insolito nella nicchia.</p><div class="griglia">
+<article class="combo" style="--acc:#7A2B39;--lin:#A26B74">
+  <header class="testa"><span class="num">10</span><span class="nome">Bordeaux</span><span class="hexacc">#7A2B39</span></header>
+  <div class="su-bianco">
+    <p class="et">su bianco</p>
+    <p class="occhiello">Per hotel e strutture ricettive</p>
+    <h3>Meno commissioni, pi&ugrave; prenotazioni dirette</h3>
+    <p class="lead">Portiamo gli ospiti a prenotare dal tuo sito, non dai portali.</p>
+    <div class="attributi">
+      <div class="attr"><p>Zero pensieri</p></div>
+      <div class="attr"><p>Risultati subito</p></div>
+    </div>
+  </div>
+  <div class="sfuma"></div>
+  <div class="su-avorio">
+    <p class="et">su avorio</p>
+    <p class="occhiello">Il metodo</p>
+    <div class="box">
+      <span class="n">01</span>
+      <h4>La voce degli ospiti</h4>
+      <p>Ricaviamo i desideri dalle parole vere delle recensioni.</p>
+    </div>
+    <a class="btn" href="#">Consulenza gratuita</a>
+    <p class="notalinea">linea nel bottone #A26B74 &mdash; accento schiarito del 30%</p>
+  </div>
+  <footer class="hex">
+    <span><i style="background:#7A2B39"></i>accento #7A2B39</span>
+    <span><i style="background:#A26B74"></i>linea CTA #A26B74</span>
+    <span class="cn">9.4:1 su bianco &middot; 8.4:1 su avorio</span>
+  </footer>
+</article>
+<article class="combo" style="--acc:#6E2C46;--lin:#9A6B7E">
+  <header class="testa"><span class="num">11</span><span class="nome">Vinaccia</span><span class="hexacc">#6E2C46</span></header>
+  <div class="su-bianco">
+    <p class="et">su bianco</p>
+    <p class="occhiello">Per hotel e strutture ricettive</p>
+    <h3>Meno commissioni, pi&ugrave; prenotazioni dirette</h3>
+    <p class="lead">Portiamo gli ospiti a prenotare dal tuo sito, non dai portali.</p>
+    <div class="attributi">
+      <div class="attr"><p>Zero pensieri</p></div>
+      <div class="attr"><p>Risultati subito</p></div>
+    </div>
+  </div>
+  <div class="sfuma"></div>
+  <div class="su-avorio">
+    <p class="et">su avorio</p>
+    <p class="occhiello">Il metodo</p>
+    <div class="box">
+      <span class="n">01</span>
+      <h4>La voce degli ospiti</h4>
+      <p>Ricaviamo i desideri dalle parole vere delle recensioni.</p>
+    </div>
+    <a class="btn" href="#">Consulenza gratuita</a>
+    <p class="notalinea">linea nel bottone #9A6B7E &mdash; accento schiarito del 30%</p>
+  </div>
+  <footer class="hex">
+    <span><i style="background:#6E2C46"></i>accento #6E2C46</span>
+    <span><i style="background:#9A6B7E"></i>linea CTA #9A6B7E</span>
+    <span class="cn">9.9:1 su bianco &middot; 8.8:1 su avorio</span>
+  </footer>
+</article>
+<article class="combo" style="--acc:#6B4361;--lin:#907288">
+  <header class="testa"><span class="num">12</span><span class="nome">Prugna</span><span class="hexacc">#6B4361</span></header>
+  <div class="su-bianco">
+    <p class="et">su bianco</p>
+    <p class="occhiello">Per hotel e strutture ricettive</p>
+    <h3>Meno commissioni, pi&ugrave; prenotazioni dirette</h3>
+    <p class="lead">Portiamo gli ospiti a prenotare dal tuo sito, non dai portali.</p>
+    <div class="attributi">
+      <div class="attr"><p>Zero pensieri</p></div>
+      <div class="attr"><p>Risultati subito</p></div>
+    </div>
+  </div>
+  <div class="sfuma"></div>
+  <div class="su-avorio">
+    <p class="et">su avorio</p>
+    <p class="occhiello">Il metodo</p>
+    <div class="box">
+      <span class="n">01</span>
+      <h4>La voce degli ospiti</h4>
+      <p>Ricaviamo i desideri dalle parole vere delle recensioni.</p>
+    </div>
+    <a class="btn" href="#">Consulenza gratuita</a>
+    <p class="notalinea">linea nel bottone #907288 &mdash; accento schiarito del 25%</p>
+  </div>
+  <footer class="hex">
+    <span><i style="background:#6B4361"></i>accento #6B4361</span>
+    <span><i style="background:#907288"></i>linea CTA #907288</span>
+    <span class="cn">8.1:1 su bianco &middot; 7.2:1 su avorio</span>
+  </footer>
+</article>
+<article class="combo" style="--acc:#6F4F6D;--lin:#8C728A">
+  <header class="testa"><span class="num">13</span><span class="nome">Malva scura</span><span class="hexacc">#6F4F6D</span></header>
+  <div class="su-bianco">
+    <p class="et">su bianco</p>
+    <p class="occhiello">Per hotel e strutture ricettive</p>
+    <h3>Meno commissioni, pi&ugrave; prenotazioni dirette</h3>
+    <p class="lead">Portiamo gli ospiti a prenotare dal tuo sito, non dai portali.</p>
+    <div class="attributi">
+      <div class="attr"><p>Zero pensieri</p></div>
+      <div class="attr"><p>Risultati subito</p></div>
+    </div>
+  </div>
+  <div class="sfuma"></div>
+  <div class="su-avorio">
+    <p class="et">su avorio</p>
+    <p class="occhiello">Il metodo</p>
+    <div class="box">
+      <span class="n">01</span>
+      <h4>La voce degli ospiti</h4>
+      <p>Ricaviamo i desideri dalle parole vere delle recensioni.</p>
+    </div>
+    <a class="btn" href="#">Consulenza gratuita</a>
+    <p class="notalinea">linea nel bottone #8C728A &mdash; accento schiarito del 20%</p>
+  </div>
+  <footer class="hex">
+    <span><i style="background:#6F4F6D"></i>accento #6F4F6D</span>
+    <span><i style="background:#8C728A"></i>linea CTA #8C728A</span>
+    <span class="cn">7.0:1 su bianco &middot; 6.2:1 su avorio</span>
+  </footer>
+</article>
+<article class="combo" style="--acc:#8E5563;--lin:#9F6E7A">
+  <header class="testa"><span class="num">14</span><span class="nome">Rosa antico scuro</span><span class="hexacc">#8E5563</span></header>
+  <div class="su-bianco">
+    <p class="et">su bianco</p>
+    <p class="occhiello">Per hotel e strutture ricettive</p>
+    <h3>Meno commissioni, pi&ugrave; prenotazioni dirette</h3>
+    <p class="lead">Portiamo gli ospiti a prenotare dal tuo sito, non dai portali.</p>
+    <div class="attributi">
+      <div class="attr"><p>Zero pensieri</p></div>
+      <div class="attr"><p>Risultati subito</p></div>
+    </div>
+  </div>
+  <div class="sfuma"></div>
+  <div class="su-avorio">
+    <p class="et">su avorio</p>
+    <p class="occhiello">Il metodo</p>
+    <div class="box">
+      <span class="n">01</span>
+      <h4>La voce degli ospiti</h4>
+      <p>Ricaviamo i desideri dalle parole vere delle recensioni.</p>
+    </div>
+    <a class="btn" href="#">Consulenza gratuita</a>
+    <p class="notalinea">linea nel bottone #9F6E7A &mdash; accento schiarito del 15%</p>
+  </div>
+  <footer class="hex">
+    <span><i style="background:#8E5563"></i>accento #8E5563</span>
+    <span><i style="background:#9F6E7A"></i>linea CTA #9F6E7A</span>
+    <span class="cn">5.8:1 su bianco &middot; 5.1:1 su avorio</span>
+  </footer>
+</article></div><h2 class="gruppo">Verdi</h2><p class="gdesc">Sei verdi, dal grigio-salvia al verde acqua. Stanno accanto al blu senza somigliargli.</p><div class="griglia">
+<article class="combo" style="--acc:#4A6B52;--lin:#65816C">
+  <header class="testa"><span class="num">15</span><span class="nome">Salvia scura</span><span class="hexacc">#4A6B52</span></header>
+  <div class="su-bianco">
+    <p class="et">su bianco</p>
+    <p class="occhiello">Per hotel e strutture ricettive</p>
+    <h3>Meno commissioni, pi&ugrave; prenotazioni dirette</h3>
+    <p class="lead">Portiamo gli ospiti a prenotare dal tuo sito, non dai portali.</p>
+    <div class="attributi">
+      <div class="attr"><p>Zero pensieri</p></div>
+      <div class="attr"><p>Risultati subito</p></div>
+    </div>
+  </div>
+  <div class="sfuma"></div>
+  <div class="su-avorio">
+    <p class="et">su avorio</p>
+    <p class="occhiello">Il metodo</p>
+    <div class="box">
+      <span class="n">01</span>
+      <h4>La voce degli ospiti</h4>
+      <p>Ricaviamo i desideri dalle parole vere delle recensioni.</p>
+    </div>
+    <a class="btn" href="#">Consulenza gratuita</a>
+    <p class="notalinea">linea nel bottone #65816C &mdash; accento schiarito del 15%</p>
+  </div>
+  <footer class="hex">
+    <span><i style="background:#4A6B52"></i>accento #4A6B52</span>
+    <span><i style="background:#65816C"></i>linea CTA #65816C</span>
+    <span class="cn">6.0:1 su bianco &middot; 5.3:1 su avorio</span>
+  </footer>
+</article>
+<article class="combo" style="--acc:#1F5A46;--lin:#578374">
+  <header class="testa"><span class="num">16</span><span class="nome">Verde bottiglia</span><span class="hexacc">#1F5A46</span></header>
+  <div class="su-bianco">
+    <p class="et">su bianco</p>
+    <p class="occhiello">Per hotel e strutture ricettive</p>
+    <h3>Meno commissioni, pi&ugrave; prenotazioni dirette</h3>
+    <p class="lead">Portiamo gli ospiti a prenotare dal tuo sito, non dai portali.</p>
+    <div class="attributi">
+      <div class="attr"><p>Zero pensieri</p></div>
+      <div class="attr"><p>Risultati subito</p></div>
+    </div>
+  </div>
+  <div class="sfuma"></div>
+  <div class="su-avorio">
+    <p class="et">su avorio</p>
+    <p class="occhiello">Il metodo</p>
+    <div class="box">
+      <span class="n">01</span>
+      <h4>La voce degli ospiti</h4>
+      <p>Ricaviamo i desideri dalle parole vere delle recensioni.</p>
+    </div>
+    <a class="btn" href="#">Consulenza gratuita</a>
+    <p class="notalinea">linea nel bottone #578374 &mdash; accento schiarito del 25%</p>
+  </div>
+  <footer class="hex">
+    <span><i style="background:#1F5A46"></i>accento #1F5A46</span>
+    <span><i style="background:#578374"></i>linea CTA #578374</span>
+    <span class="cn">8.0:1 su bianco &middot; 7.1:1 su avorio</span>
+  </footer>
+</article>
+<article class="combo" style="--acc:#416B58;--lin:#5E8171">
+  <header class="testa"><span class="num">17</span><span class="nome">Eucalipto</span><span class="hexacc">#416B58</span></header>
+  <div class="su-bianco">
+    <p class="et">su bianco</p>
+    <p class="occhiello">Per hotel e strutture ricettive</p>
+    <h3>Meno commissioni, pi&ugrave; prenotazioni dirette</h3>
+    <p class="lead">Portiamo gli ospiti a prenotare dal tuo sito, non dai portali.</p>
+    <div class="attributi">
+      <div class="attr"><p>Zero pensieri</p></div>
+      <div class="attr"><p>Risultati subito</p></div>
+    </div>
+  </div>
+  <div class="sfuma"></div>
+  <div class="su-avorio">
+    <p class="et">su avorio</p>
+    <p class="occhiello">Il metodo</p>
+    <div class="box">
+      <span class="n">01</span>
+      <h4>La voce degli ospiti</h4>
+      <p>Ricaviamo i desideri dalle parole vere delle recensioni.</p>
+    </div>
+    <a class="btn" href="#">Consulenza gratuita</a>
+    <p class="notalinea">linea nel bottone #5E8171 &mdash; accento schiarito del 15%</p>
+  </div>
+  <footer class="hex">
+    <span><i style="background:#416B58"></i>accento #416B58</span>
+    <span><i style="background:#5E8171"></i>linea CTA #5E8171</span>
+    <span class="cn">6.1:1 su bianco &middot; 5.4:1 su avorio</span>
+  </footer>
+</article>
+<article class="combo" style="--acc:#5D6A2A;--lin:#75804A">
+  <header class="testa"><span class="num">18</span><span class="nome">Oliva fredda</span><span class="hexacc">#5D6A2A</span></header>
+  <div class="su-bianco">
+    <p class="et">su bianco</p>
+    <p class="occhiello">Per hotel e strutture ricettive</p>
+    <h3>Meno commissioni, pi&ugrave; prenotazioni dirette</h3>
+    <p class="lead">Portiamo gli ospiti a prenotare dal tuo sito, non dai portali.</p>
+    <div class="attributi">
+      <div class="attr"><p>Zero pensieri</p></div>
+      <div class="attr"><p>Risultati subito</p></div>
+    </div>
+  </div>
+  <div class="sfuma"></div>
+  <div class="su-avorio">
+    <p class="et">su avorio</p>
+    <p class="occhiello">Il metodo</p>
+    <div class="box">
+      <span class="n">01</span>
+      <h4>La voce degli ospiti</h4>
+      <p>Ricaviamo i desideri dalle parole vere delle recensioni.</p>
+    </div>
+    <a class="btn" href="#">Consulenza gratuita</a>
+    <p class="notalinea">linea nel bottone #75804A &mdash; accento schiarito del 15%</p>
+  </div>
+  <footer class="hex">
+    <span><i style="background:#5D6A2A"></i>accento #5D6A2A</span>
+    <span><i style="background:#75804A"></i>linea CTA #75804A</span>
+    <span class="cn">5.9:1 su bianco &middot; 5.2:1 su avorio</span>
+  </footer>
+</article>
+<article class="combo" style="--acc:#4F5F33;--lin:#727F5C">
+  <header class="testa"><span class="num">19</span><span class="nome">Muschio</span><span class="hexacc">#4F5F33</span></header>
+  <div class="su-bianco">
+    <p class="et">su bianco</p>
+    <p class="occhiello">Per hotel e strutture ricettive</p>
+    <h3>Meno commissioni, pi&ugrave; prenotazioni dirette</h3>
+    <p class="lead">Portiamo gli ospiti a prenotare dal tuo sito, non dai portali.</p>
+    <div class="attributi">
+      <div class="attr"><p>Zero pensieri</p></div>
+      <div class="attr"><p>Risultati subito</p></div>
+    </div>
+  </div>
+  <div class="sfuma"></div>
+  <div class="su-avorio">
+    <p class="et">su avorio</p>
+    <p class="occhiello">Il metodo</p>
+    <div class="box">
+      <span class="n">01</span>
+      <h4>La voce degli ospiti</h4>
+      <p>Ricaviamo i desideri dalle parole vere delle recensioni.</p>
+    </div>
+    <a class="btn" href="#">Consulenza gratuita</a>
+    <p class="notalinea">linea nel bottone #727F5C &mdash; accento schiarito del 20%</p>
+  </div>
+  <footer class="hex">
+    <span><i style="background:#4F5F33"></i>accento #4F5F33</span>
+    <span><i style="background:#727F5C"></i>linea CTA #727F5C</span>
+    <span class="cn">7.0:1 su bianco &middot; 6.2:1 su avorio</span>
+  </footer>
+</article>
+<article class="combo" style="--acc:#1F6660;--lin:#4C8580">
+  <header class="testa"><span class="num">20</span><span class="nome">Verde acqua scuro</span><span class="hexacc">#1F6660</span></header>
+  <div class="su-bianco">
+    <p class="et">su bianco</p>
+    <p class="occhiello">Per hotel e strutture ricettive</p>
+    <h3>Meno commissioni, pi&ugrave; prenotazioni dirette</h3>
+    <p class="lead">Portiamo gli ospiti a prenotare dal tuo sito, non dai portali.</p>
+    <div class="attributi">
+      <div class="attr"><p>Zero pensieri</p></div>
+      <div class="attr"><p>Risultati subito</p></div>
+    </div>
+  </div>
+  <div class="sfuma"></div>
+  <div class="su-avorio">
+    <p class="et">su avorio</p>
+    <p class="occhiello">Il metodo</p>
+    <div class="box">
+      <span class="n">01</span>
+      <h4>La voce degli ospiti</h4>
+      <p>Ricaviamo i desideri dalle parole vere delle recensioni.</p>
+    </div>
+    <a class="btn" href="#">Consulenza gratuita</a>
+    <p class="notalinea">linea nel bottone #4C8580 &mdash; accento schiarito del 20%</p>
+  </div>
+  <footer class="hex">
+    <span><i style="background:#1F6660"></i>accento #1F6660</span>
+    <span><i style="background:#4C8580"></i>linea CTA #4C8580</span>
+    <span class="cn">6.7:1 su bianco &middot; 6.0:1 su avorio</span>
+  </footer>
+</article></div><h2 class="gruppo">Blu e grigi</h2><p class="gdesc">Grigi e due blu che non competono col blu di Prussia perche sono molto piu chiari.</p><div class="griglia">
+<article class="combo" style="--acc:#4B6072;--lin:#6F808E">
+  <header class="testa"><span class="num">21</span><span class="nome">Acciaio</span><span class="hexacc">#4B6072</span></header>
+  <div class="su-bianco">
+    <p class="et">su bianco</p>
+    <p class="occhiello">Per hotel e strutture ricettive</p>
+    <h3>Meno commissioni, pi&ugrave; prenotazioni dirette</h3>
+    <p class="lead">Portiamo gli ospiti a prenotare dal tuo sito, non dai portali.</p>
+    <div class="attributi">
+      <div class="attr"><p>Zero pensieri</p></div>
+      <div class="attr"><p>Risultati subito</p></div>
+    </div>
+  </div>
+  <div class="sfuma"></div>
+  <div class="su-avorio">
+    <p class="et">su avorio</p>
+    <p class="occhiello">Il metodo</p>
+    <div class="box">
+      <span class="n">01</span>
+      <h4>La voce degli ospiti</h4>
+      <p>Ricaviamo i desideri dalle parole vere delle recensioni.</p>
+    </div>
+    <a class="btn" href="#">Consulenza gratuita</a>
+    <p class="notalinea">linea nel bottone #6F808E &mdash; accento schiarito del 20%</p>
+  </div>
+  <footer class="hex">
+    <span><i style="background:#4B6072"></i>accento #4B6072</span>
+    <span><i style="background:#6F808E"></i>linea CTA #6F808E</span>
+    <span class="cn">6.5:1 su bianco &middot; 5.8:1 su avorio</span>
+  </footer>
+</article>
+<article class="combo" style="--acc:#3F6483;--lin:#5C7B96">
+  <header class="testa"><span class="num">22</span><span class="nome">Blu polvere scuro</span><span class="hexacc">#3F6483</span></header>
+  <div class="su-bianco">
+    <p class="et">su bianco</p>
+    <p class="occhiello">Per hotel e strutture ricettive</p>
+    <h3>Meno commissioni, pi&ugrave; prenotazioni dirette</h3>
+    <p class="lead">Portiamo gli ospiti a prenotare dal tuo sito, non dai portali.</p>
+    <div class="attributi">
+      <div class="attr"><p>Zero pensieri</p></div>
+      <div class="attr"><p>Risultati subito</p></div>
+    </div>
+  </div>
+  <div class="sfuma"></div>
+  <div class="su-avorio">
+    <p class="et">su avorio</p>
+    <p class="occhiello">Il metodo</p>
+    <div class="box">
+      <span class="n">01</span>
+      <h4>La voce degli ospiti</h4>
+      <p>Ricaviamo i desideri dalle parole vere delle recensioni.</p>
+    </div>
+    <a class="btn" href="#">Consulenza gratuita</a>
+    <p class="notalinea">linea nel bottone #5C7B96 &mdash; accento schiarito del 15%</p>
+  </div>
+  <footer class="hex">
+    <span><i style="background:#3F6483"></i>accento #3F6483</span>
+    <span><i style="background:#5C7B96"></i>linea CTA #5C7B96</span>
+    <span class="cn">6.2:1 su bianco &middot; 5.5:1 su avorio</span>
+  </footer>
+</article>
+<article class="combo" style="--acc:#5F6367;--lin:#777A7E">
+  <header class="testa"><span class="num">23</span><span class="nome">Peltro</span><span class="hexacc">#5F6367</span></header>
+  <div class="su-bianco">
+    <p class="et">su bianco</p>
+    <p class="occhiello">Per hotel e strutture ricettive</p>
+    <h3>Meno commissioni, pi&ugrave; prenotazioni dirette</h3>
+    <p class="lead">Portiamo gli ospiti a prenotare dal tuo sito, non dai portali.</p>
+    <div class="attributi">
+      <div class="attr"><p>Zero pensieri</p></div>
+      <div class="attr"><p>Risultati subito</p></div>
+    </div>
+  </div>
+  <div class="sfuma"></div>
+  <div class="su-avorio">
+    <p class="et">su avorio</p>
+    <p class="occhiello">Il metodo</p>
+    <div class="box">
+      <span class="n">01</span>
+      <h4>La voce degli ospiti</h4>
+      <p>Ricaviamo i desideri dalle parole vere delle recensioni.</p>
+    </div>
+    <a class="btn" href="#">Consulenza gratuita</a>
+    <p class="notalinea">linea nel bottone #777A7E &mdash; accento schiarito del 15%</p>
+  </div>
+  <footer class="hex">
+    <span><i style="background:#5F6367"></i>accento #5F6367</span>
+    <span><i style="background:#777A7E"></i>linea CTA #777A7E</span>
+    <span class="cn">6.1:1 su bianco &middot; 5.4:1 su avorio</span>
+  </footer>
+</article>
+<article class="combo" style="--acc:#57544C;--lin:#817F79">
+  <header class="testa"><span class="num">24</span><span class="nome">Grafite calda</span><span class="hexacc">#57544C</span></header>
+  <div class="su-bianco">
+    <p class="et">su bianco</p>
+    <p class="occhiello">Per hotel e strutture ricettive</p>
+    <h3>Meno commissioni, pi&ugrave; prenotazioni dirette</h3>
+    <p class="lead">Portiamo gli ospiti a prenotare dal tuo sito, non dai portali.</p>
+    <div class="attributi">
+      <div class="attr"><p>Zero pensieri</p></div>
+      <div class="attr"><p>Risultati subito</p></div>
+    </div>
+  </div>
+  <div class="sfuma"></div>
+  <div class="su-avorio">
+    <p class="et">su avorio</p>
+    <p class="occhiello">Il metodo</p>
+    <div class="box">
+      <span class="n">01</span>
+      <h4>La voce degli ospiti</h4>
+      <p>Ricaviamo i desideri dalle parole vere delle recensioni.</p>
+    </div>
+    <a class="btn" href="#">Consulenza gratuita</a>
+    <p class="notalinea">linea nel bottone #817F79 &mdash; accento schiarito del 25%</p>
+  </div>
+  <footer class="hex">
+    <span><i style="background:#57544C"></i>accento #57544C</span>
+    <span><i style="background:#817F79"></i>linea CTA #817F79</span>
+    <span class="cn">7.6:1 su bianco &middot; 6.7:1 su avorio</span>
+  </footer>
+</article></div>
+</div></body></html>

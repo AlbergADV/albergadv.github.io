@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Tavola di lavoro, 14/09/2026. Materiale in ingresso: NON va online. Confronto stile del box, non è una decisione presa. -->
+<title>Tavola — stile del box, non solo il colore</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+:root{
+  --bianco:#FFFFFF; --avorio:#F6F1E7; --bordo:#E6DECE;
+  --titolo:#1A1A18; --corpo:#4A4740;
+  --navy:#0F2440;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif;
+  --sans:"Source Sans 3","Segoe UI",system-ui,sans-serif;
+  --r:10px; --cor:6px;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#EFECE4;color:var(--corpo);font-family:var(--sans);
+     font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.servizio{background:#1A1A18;color:#B9B4A8;font-size:12px;letter-spacing:.08em;padding:10px 24px;text-align:center}
+.wrap{max-width:1180px;margin:0 auto;padding:36px 24px 80px}
+h1{font-family:var(--serif);font-weight:600;color:var(--titolo);font-size:26px;margin:0 0 8px}
+.intro{max-width:680px;font-size:14.5px;color:#6E6A61;margin-bottom:6px}
+.intro b{color:var(--titolo)}
+.riferimento{display:flex;align-items:center;gap:12px;margin:20px 0 32px;padding:12px 16px;
+             background:#fff;border:1px solid var(--bordo);border-radius:10px;width:fit-content}
+.riferimento .btn{display:inline-flex;background:var(--navy);color:#fff;font-family:var(--sans);
+     font-weight:600;font-size:14px;padding:9px 18px;border-radius:8px}
+.riferimento span{font-size:12.5px;color:#6E6A61}
+
+.direzione{margin-bottom:44px}
+.dir-testa{display:flex;align-items:baseline;gap:10px;margin-bottom:6px}
+.dir-nome{font-family:var(--serif);font-weight:600;font-size:18px;color:var(--titolo)}
+.dir-costo{font-size:13px;color:#8A5A2E;background:#FBF1E6;padding:2px 8px;border-radius:6px}
+.dir-desc{font-size:13.5px;color:#6E6A61;margin-bottom:16px;max-width:680px}
+
+.righe{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media (max-width:640px){.righe{grid-template-columns:1fr}}
+
+.cella{background:var(--bianco);border:1px solid var(--bordo);border-radius:12px;padding:18px}
+.cella .etich{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#8B8579;margin-bottom:10px}
+.occhiello{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;margin:0 0 10px}
+
+/* box base, riusato dalle tre direzioni con classi diverse */
+.mini{position:relative;padding:16px;border-radius:var(--r);display:flex;flex-direction:column;gap:6px}
+.mini .n{font-family:var(--serif);font-size:14px;font-weight:600}
+.mini h3{font-family:var(--serif);font-weight:600;font-size:16px;line-height:1.2;margin:0;color:var(--titolo)}
+.mini p{margin:0;font-size:13px;color:var(--corpo);line-height:1.4}
+
+/* Direzione 1 — fondo in tinta */
+.mini.tinta{background:color-mix(in srgb, var(--c) 12%, var(--bianco))}
+.mini.tinta::after{content:"";position:absolute;inset:var(--cor);pointer-events:none;
+     border-radius:calc(var(--r) - var(--cor));border:1px solid var(--c)}
+.mini.tinta .n{color:var(--c)}
+
+/* Direzione 2 — bordo pieno esterno */
+.mini.bordo{background:var(--avorio);border:2px solid var(--c)}
+.mini.bordo .n{color:var(--c)}
+
+/* Direzione 3 — testata a blocco */
+.mini.blocco{background:var(--avorio);padding-top:0;overflow:hidden}
+.mini.blocco .testata{background:var(--c);color:#fff;margin:0 -16px 12px;padding:10px 16px;
+     font-family:var(--serif);font-size:14px;font-weight:600}
+</style>
+</head>
+<body>
+
+<div class="servizio">TAVOLA DI LAVORO — stile del box, tre direzioni — non va online — non è una decisione presa</div>
+
+<div class="wrap">
+  <h1>Non solo il colore: come il box lo porta</h1>
+  <p class="intro">Nella tavola di ieri il colore cambiava solo sulla cornice sottile: il fondo del box restava sempre crema, quindi con qualunque colore il cambiamento si vedeva poco. Qui il fondo del box è nella partita. <b>Restano fissi solo il bottone navy e gli sfondi bianco/crema della pagina</b> — il resto del box è aperto.</p>
+  <p class="intro">Tre direzioni, ciascuna su due colori (petrolio e terracotta) per vedere come cambiano con un colore freddo e uno caldo.</p>
+
+  <div class="riferimento">
+    <span class="btn">Consulenza gratuita</span>
+    <span>bottone navy — riferimento fisso, non cambia in nessuna direzione</span>
+  </div>
+
+  <!-- DIREZIONE 1 -->
+  <div class="direzione">
+    <div class="dir-testa"><span class="dir-nome">1 — Fondo in tinta</span><span class="dir-costo">scosta dall'85% neutri del brief</span></div>
+    <p class="dir-desc">Il fondo del box prende una tinta leggera del colore, non solo la cornice. È la direzione dove il cambiamento si vede di più, anche da lontano.</p>
+    <div class="righe">
+      <div class="cella" style="--c:#1F5C57"><p class="etich">petrolio #1F5C57</p>
+        <p class="occhiello" style="color:#1F5C57">Per hotel e strutture ricettive</p>
+        <div class="mini tinta"><span class="n">01</span><h3>La voce degli ospiti</h3><p>Ricaviamo i desideri dalle parole vere dei tuoi ospiti.</p></div>
+      </div>
+      <div class="cella" style="--c:#9A4A32"><p class="etich">terracotta #9A4A32</p>
+        <p class="occhiello" style="color:#9A4A32">Per hotel e strutture ricettive</p>
+        <div class="mini tinta"><span class="n">01</span><h3>La voce degli ospiti</h3><p>Ricaviamo i desideri dalle parole vere dei tuoi ospiti.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIREZIONE 2 -->
+  <div class="direzione">
+    <div class="dir-testa"><span class="dir-nome">2 — Bordo pieno esterno</span><span class="dir-costo">rientra il bordo esterno, scartato il 13/09</span></div>
+    <p class="dir-desc">Il fondo resta crema come oggi, ma il bordo diventa pieno e visibile tutto intorno, non più la sottile cornice interna. Cambio più leggero del primo, ma il box smette di condividere la forma del bottone.</p>
+    <div class="righe">
+      <div class="cella" style="--c:#1F5C57"><p class="etich">petrolio #1F5C57</p>
+        <p class="occhiello" style="color:#1F5C57">Per hotel e strutture ricettive</p>
+        <div class="mini bordo"><span class="n">01</span><h3>La voce degli ospiti</h3><p>Ricaviamo i desideri dalle parole vere dei tuoi ospiti.</p></div>
+      </div>
+      <div class="cella" style="--c:#9A4A32"><p class="etich">terracotta #9A4A32</p>
+        <p class="occhiello" style="color:#9A4A32">Per hotel e strutture ricettive</p>
+        <div class="mini bordo"><span class="n">01</span><h3>La voce degli ospiti</h3><p>Ricaviamo i desideri dalle parole vere dei tuoi ospiti.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DIREZIONE 3 -->
+  <div class="direzione">
+    <div class="dir-testa"><span class="dir-nome">3 — Testata a blocco</span><span class="dir-costo">il colore si concentra in un punto solo</span></div>
+    <p class="dir-desc">Il fondo del box resta crema, ma sopra il numero c'è una fascia piena del colore. Il colore si vede forte ma solo lì, non su tutto il box.</p>
+    <div class="righe">
+      <div class="cella" style="--c:#1F5C57"><p class="etich">petrolio #1F5C57</p>
+        <p class="occhiello" style="color:#1F5C57">Per hotel e strutture ricettive</p>
+        <div class="mini blocco"><div class="testata">01</div><h3>La voce degli ospiti</h3><p>Ricaviamo i desideri dalle parole vere dei tuoi ospiti.</p></div>
+      </div>
+      <div class="cella" style="--c:#9A4A32"><p class="etich">terracotta #9A4A32</p>
+        <p class="occhiello" style="color:#9A4A32">Per hotel e strutture ricettive</p>
+        <div class="mini blocco"><div class="testata">01</div><h3>La voce degli ospiti</h3><p>Ricaviamo i desideri dalle parole vere dei tuoi ospiti.</p></div>
+      </div>
+    </div>
+  </div>
+
+  <p style="font-size:13px;color:#6E6A61;max-width:680px">Struttura invariata in tutte e tre: stessa griglia, stesso copy, stesso bottone. Cambia solo come il box porta il colore.</p>
+</div>
+
+</body>
+</html>
