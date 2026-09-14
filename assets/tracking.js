@@ -1,4 +1,4 @@
-/* Eventi GA4: cta_click, section_view, form_start, form_abbandono, generate_lead.
+/* Eventi GA4: clic_cta, sezione_vista, modulo_iniziato, modulo_abbandonato, generate_lead.
    Un file solo caricato su index.html, modulo.html e grazie.html: ogni blocco si ferma
    da solo se non trova gli elementi che gli servono, così vale su tutte e tre le pagine.
    GA4 parte solo dopo il consenso (Iubenda blocca gtag.js finché l'utente non accetta):
@@ -18,7 +18,7 @@ function inviaEvento(nome, parametri) {
   if (!cta.length) return;
   for (var i = 0; i < cta.length; i++) {
     cta[i].addEventListener('click', function(){
-      inviaEvento('cta_click', { posizione: this.getAttribute('data-cta') });
+      inviaEvento('clic_cta', { posizione: this.getAttribute('data-cta') });
     });
   }
 })();
@@ -27,17 +27,28 @@ function inviaEvento(nome, parametri) {
 (function(){
   var sezioni = document.querySelectorAll('section.hero, #problema, #soluzione, #metodo, #perche-noi, #team, #garanzia, #consulenza');
   if (!sezioni.length || !('IntersectionObserver' in window)) return;
+  var etichette = {
+    hero: '01 Primo schermo',
+    problema: '02 Il costo',
+    soluzione: '03 La soluzione',
+    metodo: '04 Il metodo',
+    'perche-noi': '05 Perché sceglierci',
+    team: '06 Il team',
+    garanzia: '07 La garanzia',
+    consulenza: '08 Chiusura'
+  };
   var oss = new IntersectionObserver(function(righe){
     righe.forEach(function(r){
       if (!r.isIntersecting) return;
-      inviaEvento('section_view', { sezione: r.target.id || 'hero' });
+      var id = r.target.id || 'hero';
+      inviaEvento('sezione_vista', { sezione: etichette[id] || id });
       oss.unobserve(r.target);
     });
   }, { threshold: 0, rootMargin: '0px 0px -25% 0px' });
   for (var i = 0; i < sezioni.length; i++) oss.observe(sezioni[i]);
 })();
 
-/* form_start e form_abbandono (solo modulo.html) */
+/* modulo_iniziato e modulo_abbandonato (solo modulo.html) */
 (function(){
   var form = document.getElementById('modulo-consulenza');
   if (!form) return;
@@ -51,13 +62,13 @@ function inviaEvento(nome, parametri) {
     ultimoCampo = e.target.id;
     if (iniziato) return;
     iniziato = true;
-    inviaEvento('form_start');
+    inviaEvento('modulo_iniziato');
   });
 
   form.addEventListener('submit', function(){ inviato = true; });
 
   window.addEventListener('pagehide', function(){
-    if (iniziato && !inviato) inviaEvento('form_abbandono', { ultimo_campo: ultimoCampo });
+    if (iniziato && !inviato) inviaEvento('modulo_abbandonato', { ultimo_campo: ultimoCampo });
   });
 })();
 

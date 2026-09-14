@@ -12,13 +12,15 @@
   setTimeout(mostraTutto, 1600);
 })();
 
-/* box (card/passo/attr): bordino ottone acceso finché il box è a schermo (mobile, niente hover) */
+/* box (card/passo/attr): bordino ottone su un box alla volta — quello che passa per il centro
+   dello schermo mentre si scorre (mobile, niente hover). La fascia osservata è alta il 2% dello
+   schermo, meno dello spazio fra due box: non se ne accendono mai due insieme. */
 (function(){
   var box = document.querySelectorAll('.card, .passo, .attr');
   if (!box.length || !('IntersectionObserver' in window)) return;
   var oss = new IntersectionObserver(function(righe){
     righe.forEach(function(r){ r.target.classList.toggle('in-vista', r.isIntersecting); });
-  });
+  }, { rootMargin: '-49% 0px -49% 0px' });
   for (var i=0;i<box.length;i++) oss.observe(box[i]);
 })();
 
