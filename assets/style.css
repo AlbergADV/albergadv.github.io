@@ -291,7 +291,7 @@ footer .w{padding-block:36px 16px}
 .colonna-testo h1::after{content:"";display:block;width:64px;height:var(--fil);background:var(--ottone);margin-top:24px}
 .colonna-testo .lead{margin-top:-8px}
 
-.whatsapp-cta{align-self:center;display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:6px}
+.whatsapp-cta{align-self:center;display:flex;flex-direction:column;align-items:center;gap:8px;margin-top:-8px}
 .btn-whatsapp{display:inline-flex;align-items:center;gap:8px;background:rgba(37,211,102,.14);
      color:var(--titolo);font-family:var(--sans);font-weight:600;font-size:14px;
      padding:8px 16px;border:var(--fil) solid #25D366;border-radius:var(--r);
@@ -330,6 +330,7 @@ footer .w{padding-block:36px 16px}
 @media (max-width:900px){
   .modulo .w{grid-template-columns:1fr;gap:36px}
   .colonna-testo h1{font-size:36px}
+  .colonna-testo .occhiello{font-size:12.5px} /* "Consulenza gratuita — senza impegno" su una riga fino a 360px */
 }
 @media (max-width:480px){
   .form-card{padding:24px}
