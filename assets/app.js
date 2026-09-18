@@ -12,15 +12,31 @@
   setTimeout(mostraTutto, 1600);
 })();
 
-/* box (card/passo/attr): bordino ottone su un box alla volta — quello che passa per il centro
-   dello schermo mentre si scorre (mobile, niente hover). La fascia osservata è alta il 2% dello
-   schermo, meno dello spazio fra due box: non se ne accendono mai due insieme. */
+/* box (card/passo/attr): bordino ottone su un box alla volta mentre si scorre (mobile, niente hover).
+   Un box si accende appena i suoi 4/5 sono nello schermo; quando ne entra un altro l'evidenziazione
+   passa a lui. Se quello acceso esce, torna all'ultimo ancora dentro (se c'è). */
 (function(){
   var box = document.querySelectorAll('.card, .passo, .attr');
   if (!box.length || !('IntersectionObserver' in window)) return;
+  var dentro = [], attivo = null;
+  function accendi(el){
+    if (attivo === el) return;
+    if (attivo) attivo.classList.remove('in-vista');
+    attivo = el;
+    if (attivo) attivo.classList.add('in-vista');
+  }
   var oss = new IntersectionObserver(function(righe){
-    righe.forEach(function(r){ r.target.classList.toggle('in-vista', r.isIntersecting); });
-  }, { rootMargin: '-49% 0px -49% 0px' });
+    righe.forEach(function(r){
+      var i = dentro.indexOf(r.target);
+      if (r.intersectionRatio >= 0.8) {
+        if (i === -1) dentro.push(r.target);
+        accendi(r.target);
+      } else if (i !== -1) {
+        dentro.splice(i, 1);
+        if (attivo === r.target) accendi(dentro.length ? dentro[dentro.length - 1] : null);
+      }
+    });
+  }, { threshold: [0.8] });
   for (var i=0;i<box.length;i++) oss.observe(box[i]);
 })();
 

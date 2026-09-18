@@ -114,8 +114,11 @@ html{scroll-padding-top:90px}
 .card .cap{display:flex;align-items:center;gap:12px}
 .card p{font-size:16px}
 .card.evid{box-shadow:inset 0 0 0 2px var(--ottone)}
-.card:hover,.card:focus-visible,.passo:hover,.passo:focus-visible,.attr:hover,.attr:focus-visible{
+/* solo con mouse vero: su touch il tap non deve accendere il box */
+@media (hover:hover){
+  .card:hover,.card:focus-visible,.passo:hover,.passo:focus-visible,.attr:hover,.attr:focus-visible{
      transform:scale(1.02);box-shadow:inset 0 0 0 2px var(--ottone)}
+}
 
 .icona{width:32px;height:32px;color:var(--ottone);flex:none}
 .passo{position:relative;background:var(--bianco);padding:24px;display:flex;flex-direction:column;gap:10px;border-radius:var(--r);aspect-ratio:4/4.4;
