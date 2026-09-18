@@ -13,7 +13,7 @@
 })();
 
 /* box (card/passo/attr): bordino ottone su un box alla volta mentre si scorre (mobile, niente hover).
-   Un box si accende appena i suoi 4/5 sono nello schermo; quando ne entra un altro l'evidenziazione
+   Un box si accende appena è tutto dentro lo schermo; quando ne entra un altro l'evidenziazione
    passa a lui. Se quello acceso esce, torna all'ultimo ancora dentro (se c'è). */
 (function(){
   var box = document.querySelectorAll('.card, .passo, .attr');
@@ -28,7 +28,7 @@
   var oss = new IntersectionObserver(function(righe){
     righe.forEach(function(r){
       var i = dentro.indexOf(r.target);
-      if (r.intersectionRatio >= 0.8) {
+      if (r.intersectionRatio >= 0.99) {
         if (i === -1) dentro.push(r.target);
         accendi(r.target);
       } else if (i !== -1) {
@@ -36,7 +36,7 @@
         if (attivo === r.target) accendi(dentro.length ? dentro[dentro.length - 1] : null);
       }
     });
-  }, { threshold: [0.8] });
+  }, { threshold: [0.99] });
   for (var i=0;i<box.length;i++) oss.observe(box[i]);
 })();
 
