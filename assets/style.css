@@ -89,7 +89,8 @@ html{scroll-padding-top:90px}
          gap:48px;align-items:center}
 .hero .inner{display:flex;flex-direction:column;align-items:flex-start;gap:18px}
 .hero h1{margin-top:-8px}
-.hero p.sub{font-size:19px;margin-top:8px}
+.hero p.sub{font-size:19px;margin-top:8px;text-wrap:balance}
+.hero p.sub span{display:block}
 .slot-video{border:1px dashed var(--bordo);border-radius:var(--r);background:var(--avorio);
             aspect-ratio:332/340;display:grid;place-items:center;text-align:center;padding:16px;color:var(--segnaposto);
             font-size:12px;letter-spacing:.14em;text-transform:uppercase}
