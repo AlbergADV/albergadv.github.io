@@ -246,7 +246,7 @@ footer .w{padding-block:36px 16px}
 
 .conto-b{position:relative;background:var(--bianco);border-radius:var(--r);padding:22px 20px}
 .conto-b::after{content:"";position:absolute;inset:var(--cor);pointer-events:none;
-     border:var(--fil) solid var(--ottone);border-radius:calc(var(--r) - var(--cor))}
+     border:1.5px solid var(--ottone);border-radius:calc(var(--r) - var(--cor))}
 .conto-b h3{font-family:var(--serif);font-weight:600;font-size:21px;line-height:1.25;color:var(--titolo);margin:0}
 .righe{margin-top:14px}
 .riga{display:flex;align-items:baseline;justify-content:space-between;gap:14px;padding-block:10px;
