@@ -304,7 +304,7 @@ footer .w{padding-block:36px 16px}
 .form-card{position:relative;background:var(--bianco);border-radius:var(--r);
            padding:32px;display:flex;flex-direction:column;gap:16px}
 .form-card::after{content:"";position:absolute;inset:var(--cor);pointer-events:none;
-     border:var(--fil) solid var(--ottone);border-radius:calc(var(--r) - var(--cor))}
+     border:1.5px solid var(--ottone);border-radius:calc(var(--r) - var(--cor))}
 
 .campi-griglia{display:grid;grid-template-columns:1fr;gap:16px}
 
