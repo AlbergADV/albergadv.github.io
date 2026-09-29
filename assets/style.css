@@ -183,6 +183,20 @@ footer .w{padding-block:36px 16px}
 .f-legale a{color:var(--corpo);text-decoration:underline;text-underline-offset:3px}
 .f-legale a:focus-visible{outline:2px solid var(--ottone);outline-offset:3px}
 
+/* ——— pagine privacy e cookie ——— */
+.policy h1{font-size:36px}
+.policy > * + *{margin-top:12px}
+.policy h2{font-size:21px;margin-top:36px}
+.policy h3{font-size:17px;margin-top:var(--gut)}
+.policy a{color:var(--corpo);text-decoration:underline;text-underline-offset:3px}
+.policy a:hover{color:var(--ottone)}
+.policy a:focus-visible{outline:2px solid var(--ottone);outline-offset:3px}
+.tabella{overflow-x:auto}
+.tabella table{width:100%;border-collapse:collapse;font-size:15px}
+.tabella th,.tabella td{text-align:left;vertical-align:top;padding:10px 16px 10px 0;border-bottom:1px solid var(--bordo)}
+.tabella th{color:var(--titolo);font-weight:600}
+.tabella code{overflow-wrap:anywhere}
+
 /* ——— movimento ——— */
 @keyframes sali{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
 @keyframes apri{from{opacity:0;transform:scale(1.04)}to{opacity:1;transform:none}}
