@@ -253,45 +253,44 @@ footer .w{padding-block:36px 16px}
 }
 
 /* blocchi esempio della perdita */
-.conto-a{position:relative;background:var(--avorio);border-radius:var(--r);padding:20px 24px;margin-top:32px}
-.conto-a::after{content:"";position:absolute;inset:var(--cor);pointer-events:none;
-     border:var(--fil) solid var(--rosso);border-radius:calc(var(--r) - var(--cor))}
+/* bordo rosso sul bordo esterno del riquadro, non più cornice interna (24/10/2026) */
+.conto-a{position:relative;background:var(--avorio);border:var(--fil) solid var(--rosso);border-radius:var(--r);padding:20px 24px;margin-top:32px}
 .catena{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:0 8px;align-items:center;justify-items:center}
 .catena .cella{text-align:center}
 .cella .et{font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;
            color:var(--titolo);margin-bottom:4px;display:block}
-.cella.finale .et{color:var(--rosso)}
+.cella.finale .et{color:var(--titolo)}
 .cella .val{font-family:var(--serif);font-weight:600;font-size:21px;line-height:1.1;color:var(--titolo);
             font-variant-numeric:tabular-nums}
 .cella.finale .val{font-size:32px;color:var(--rosso)}
 .segno{font-family:var(--serif);font-size:19px;color:var(--titolo);line-height:1;padding-top:16px;
        user-select:none}
 .nota-a{margin-top:14px;font-size:15px;text-align:right}
-/* calcolatore (sezione 02, dal 24/10/2026): stessa catena, con una barra sotto i due valori */
-.calcolo .cella{width:100%;max-width:300px}
+/* calcolatore (sezione 02): versione "Fila" del 24/10/2026. Stesso riquadro avorio con cornice rossa,
+   i due valori e il risultato su una riga, separati da un filo; barre sottili verdi fino al pallino */
+.catena.calcolo{grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto;gap:32px;align-items:end;justify-items:stretch}
+.catena.calcolo .cella{text-align:left;min-width:0}
 .calcolo label.et{cursor:pointer}
 .calcolo output{display:block;white-space:nowrap}
-.catena.calcolo .cella:not(.finale) .val{font-size:28px}
-.calcolo input[type=range]{-webkit-appearance:none;appearance:none;width:100%;max-width:220px;height:5px;margin:14px auto 0;
-     display:block;background:#D3C9B5;border-radius:3px;cursor:pointer}
-.calcolo input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;
-     background:var(--ottone);border:3px solid var(--bianco);box-shadow:0 0 0 1px var(--ottone)}
-.calcolo input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--ottone);
-     border:3px solid var(--bianco);box-shadow:0 0 0 1px var(--ottone)}
-.calcolo input[type=range]:focus-visible{outline:2px solid var(--ottone);outline-offset:4px}
-.calcolo .segno{padding-top:0}
-/* telefono: incasso × commissione su una riga, il risultato sotto a tutta larghezza */
+.catena.calcolo .cella .val{font-size:28px;margin-bottom:10px}
+.catena.calcolo .finale{text-align:right;padding-left:32px;border-left:1px solid var(--bordo);align-self:stretch;
+     display:flex;flex-direction:column;justify-content:flex-end}
+.catena.calcolo .finale .val{font-size:32px;margin-bottom:0}
+.calcolo input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:2px;margin:0;display:block;border-radius:1px;cursor:pointer;
+     background:linear-gradient(to right, var(--ottone) var(--p,10%), #D3C9B5 var(--p,10%))}
+.calcolo input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:var(--ottone);border:0}
+.calcolo input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--ottone);border:0}
+.calcolo input[type=range]:focus-visible{outline:2px solid var(--ottone);outline-offset:6px}
+/* telefono: i due valori affiancati, il risultato sotto su una riga */
 @media (max-width:700px){
-  .catena.calcolo{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:14px 6px}
-  .calcolo .segno:nth-child(4){display:none}
-  .calcolo .finale{grid-column:1 / -1;max-width:none;padding-top:12px;border-top:1px solid var(--bordo)}
-  .catena.calcolo .finale .val{font-size:28px}
-  .catena.calcolo .cella:not(.finale) .val{font-size:min(22px, 5.6vw)}
+  .catena.calcolo{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px 20px}
+  .catena.calcolo .cella .val{font-size:min(22px, 5.6vw);margin-bottom:8px}
+  .catena.calcolo .finale{grid-column:1 / -1;flex-direction:row;justify-content:space-between;align-items:baseline;gap:12px;
+       text-align:left;padding-left:0;border-left:0;padding-top:14px;border-top:1px solid var(--bordo)}
+  .catena.calcolo .finale .val{font-size:min(28px, 7.4vw)}
   /* "Incasso annuo dalle OTA" su una riga: meno spaziatura fra lettere e meno margine dentro il riquadro */
   .conto-a{padding:18px 12px}
-  .catena.calcolo label.et{white-space:nowrap;letter-spacing:.06em;font-size:min(10.5px, calc(3.7vw - 3.8px))}
-  .calcolo input[type=range]{max-width:130px;height:4px;margin-top:12px}
-  .calcolo input[type=range]::-webkit-slider-thumb{width:18px;height:18px}
+  .catena.calcolo label.et,.catena.calcolo .finale .et{white-space:nowrap;letter-spacing:.06em;font-size:min(10.5px, calc(3.7vw - 3.8px))}
 }
 .catena .rivela.in:nth-child(3){animation-delay:100ms}
 .catena .rivela.in:nth-child(5){animation-delay:220ms}

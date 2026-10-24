@@ -23,6 +23,7 @@
     uscite[0].textContent = euro(+incasso.value);
     uscite[1].textContent = quota.value + '%';
     uscite[2].textContent = euro(incasso.value * quota.value / 100);
+    [incasso, quota].forEach(function(r){ r.style.setProperty('--p', (r.value - r.min) / (r.max - r.min) * 100 + '%'); });
   }
   incasso.addEventListener('input', aggiorna);
   quota.addEventListener('input', aggiorna);
