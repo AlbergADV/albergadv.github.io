@@ -89,7 +89,7 @@ html{scroll-padding-top:90px}
          gap:48px;align-items:center}
 .hero .inner{display:flex;flex-direction:column;align-items:flex-start;gap:18px}
 .hero h1{margin-top:-8px}
-.h1-riga{white-space:nowrap} /* la prima frase dell'H1 resta su una riga anche su mobile */
+.h1-riga{white-space:nowrap} /* frasi dei titoli che restano su una riga anche su mobile */
 .hero p.sub{font-size:19px;margin-top:8px;text-wrap:balance}
 .hero p.sub span{display:block}
 .slot-video{border:1px dashed var(--bordo);border-radius:var(--r);background:var(--avorio);
@@ -232,6 +232,7 @@ footer .w{padding-block:36px 16px}
   .hero{padding-block:48px 32px}
   .hero .occhiello{letter-spacing:.05em}
   .hero h1{font-size:min(30px, calc(7.6vw - 4px))}
+  .chiusura h2{font-size:min(27px, calc(7.2vw - 4px))}
   .griglia3,.griglia4,.griglia2,.chiusura .w,.hero .w{grid-template-columns:1fr}
   .lead,.hero p.sub{font-size:17px}
   #problema h2{font-size:23px}
@@ -266,12 +267,14 @@ footer .w{padding-block:36px 16px}
 /* calcolatore (sezione 02, dal 24/10/2026): stessa catena, con una barra sotto i due valori */
 .calcolo .cella{width:100%;max-width:300px}
 .calcolo label.et{cursor:pointer}
-.calcolo output{display:block}
-.calcolo input[type=range]{-webkit-appearance:none;appearance:none;width:100%;max-width:220px;height:3px;margin:12px auto 0;
-     display:block;background:var(--bordo);border-radius:2px;cursor:pointer}
-.calcolo input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;
-     background:var(--bianco);border:var(--fil) solid var(--ottone)}
-.calcolo input[type=range]::-moz-range-thumb{width:10px;height:10px;border-radius:50%;background:var(--bianco);border:var(--fil) solid var(--ottone)}
+.calcolo output{display:block;white-space:nowrap}
+.catena.calcolo .cella:not(.finale) .val{font-size:28px}
+.calcolo input[type=range]{-webkit-appearance:none;appearance:none;width:100%;max-width:220px;height:5px;margin:14px auto 0;
+     display:block;background:#D3C9B5;border-radius:3px;cursor:pointer}
+.calcolo input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:20px;height:20px;border-radius:50%;
+     background:var(--ottone);border:3px solid var(--bianco);box-shadow:0 0 0 1px var(--ottone)}
+.calcolo input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--ottone);
+     border:3px solid var(--bianco);box-shadow:0 0 0 1px var(--ottone)}
 .calcolo input[type=range]:focus-visible{outline:2px solid var(--ottone);outline-offset:4px}
 .calcolo .segno{padding-top:0}
 /* telefono: incasso × commissione su una riga, il risultato sotto a tutta larghezza */
@@ -280,8 +283,9 @@ footer .w{padding-block:36px 16px}
   .calcolo .segno:nth-child(4){display:none}
   .calcolo .finale{grid-column:1 / -1;max-width:none;padding-top:12px;border-top:1px solid var(--bordo)}
   .catena.calcolo .finale .val{font-size:28px}
-  .calcolo input[type=range]{max-width:120px;height:2px;margin-top:10px}
-  .calcolo input[type=range]::-webkit-slider-thumb{width:12px;height:12px}
+  .catena.calcolo .cella:not(.finale) .val{font-size:min(22px, 5.6vw)}
+  .calcolo input[type=range]{max-width:130px;height:4px;margin-top:12px}
+  .calcolo input[type=range]::-webkit-slider-thumb{width:18px;height:18px}
 }
 .catena .rivela.in:nth-child(3){animation-delay:100ms}
 .catena .rivela.in:nth-child(5){animation-delay:220ms}
