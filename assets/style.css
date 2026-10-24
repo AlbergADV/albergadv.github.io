@@ -244,7 +244,6 @@ footer .w{padding-block:36px 16px}
   .barra .logo{height:26px}
   .barra .btn.sm{font-size:14px;padding:10px 14px}
   .barra-azioni{margin-left:auto}
-  .chiusura .copy{order:1}
   .f-top{grid-template-columns:1fr 1fr;gap:28px 20px}
   .f-marchio,.f-parliamone{grid-column:1 / -1}
 }
