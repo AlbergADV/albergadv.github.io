@@ -12,34 +12,6 @@
   setTimeout(mostraTutto, 1600);
 })();
 
-/* box (card/passo/attr): bordino ottone su un box alla volta mentre si scorre (mobile, niente hover).
-   Un box si accende appena è tutto dentro lo schermo; quando ne entra un altro l'evidenziazione
-   passa a lui. Se quello acceso esce, torna all'ultimo ancora dentro (se c'è). */
-(function(){
-  var box = document.querySelectorAll('.card, .passo, .attr');
-  if (!box.length || !('IntersectionObserver' in window)) return;
-  var dentro = [], attivo = null;
-  function accendi(el){
-    if (attivo === el) return;
-    if (attivo) attivo.classList.remove('in-vista');
-    attivo = el;
-    if (attivo) attivo.classList.add('in-vista');
-  }
-  var oss = new IntersectionObserver(function(righe){
-    righe.forEach(function(r){
-      var i = dentro.indexOf(r.target);
-      if (r.intersectionRatio >= 0.99) {
-        if (i === -1) dentro.push(r.target);
-        accendi(r.target);
-      } else if (i !== -1) {
-        dentro.splice(i, 1);
-        if (attivo === r.target) accendi(dentro.length ? dentro[dentro.length - 1] : null);
-      }
-    });
-  }, { threshold: [0.99] });
-  for (var i=0;i<box.length;i++) oss.observe(box[i]);
-})();
-
 /* calcolatore delle commissioni (sezione 02): incasso dalle OTA × commissione media */
 (function(){
   var incasso = document.getElementById('calc-incasso');
