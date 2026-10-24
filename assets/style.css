@@ -27,8 +27,8 @@ h3{font-size:21px;line-height:1.25}
 p{margin:0}
 .occhiello{font-family:var(--sans);font-size:16.2px;font-weight:600;letter-spacing:.14em;
            text-transform:uppercase;color:var(--ottone);margin:0}
-.lead{font-size:19px}
-.testo{}
+.lead{font-size:20.5px}
+.testo{font-size:18.5px}
 
 .btn{position:relative;display:inline-block;background:var(--navy);color:#fff;font-family:var(--sans);
      font-weight:600;font-size:17px;padding:16px 32px;border:0;border-radius:var(--r);
@@ -90,7 +90,7 @@ html{scroll-padding-top:90px}
 .hero .inner{display:flex;flex-direction:column;align-items:flex-start;gap:18px}
 .hero h1{margin-top:-8px}
 .h1-riga{white-space:nowrap} /* frasi dei titoli che restano su una riga anche su mobile */
-.hero p.sub{font-size:19px;margin-top:8px;text-wrap:balance}
+.hero p.sub{font-size:20.5px;margin-top:8px;text-wrap:balance}
 .hero p.sub span{display:block}
 .slot-video{border:1px dashed var(--bordo);border-radius:var(--r);background:var(--avorio);
             aspect-ratio:332/340;display:grid;place-items:center;text-align:center;padding:16px;color:var(--segnaposto);
@@ -108,13 +108,14 @@ html{scroll-padding-top:90px}
 @media (min-width:901px){.griglia3.griglia3-garanzia{grid-template-columns:1fr 1.3fr 1fr;align-items:start}}
 .griglia4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:22px}
 .griglia2{display:grid;grid-template-columns:repeat(2,1fr);gap:32px}
-.griglia2-perche .attr p{font-size:14.5px}
+.griglia2-perche .attr p{font-size:16px}
 .card{position:relative;background:var(--bianco);padding:24px;display:flex;flex-direction:column;gap:10px;border-radius:var(--r);
       transition:transform 140ms ease-out, box-shadow 140ms ease-out}
 .card::after,.passo::after,.attr::after{content:"";position:absolute;inset:var(--cor);pointer-events:none;
      border:1.5px solid var(--ottone);border-radius:calc(var(--r) - var(--cor))}
 .card .cap{display:flex;align-items:center;gap:12px}
-.card p{font-size:16px}
+.card p{font-size:17.5px}
+.card h3,.passo h3,.attr h3{font-size:22.5px} /* titoli dei box un pelo più grandi (24/10/2026) */
 .card.evid{box-shadow:inset 0 0 0 2px var(--ottone)}
 /* solo con mouse vero: su touch il tap non deve accendere il box */
 @media (hover:hover){
@@ -127,18 +128,18 @@ html{scroll-padding-top:90px}
       transition:transform 140ms ease-out, box-shadow 140ms ease-out}
 .griglia4 .passo{aspect-ratio:auto}
 @media (max-width:900px){.passo{aspect-ratio:auto}}
-.passo .n{font-family:var(--serif);font-size:15px;color:var(--ottone);font-weight:600;white-space:nowrap;
+.passo .n{font-family:var(--serif);font-size:16px;color:var(--ottone);font-weight:600;white-space:nowrap;
           font-variant-numeric:tabular-nums}
 /* etichette su una riga sul computer; fra 901 e 1100px i riquadri sono troppo stretti e vanno a capo */
 @media (min-width:901px) and (max-width:1100px){.passo .n{white-space:normal}}
 .passo h3{position:relative;padding-bottom:12px}
 .passo h3::after{content:"";position:absolute;left:0;bottom:0;width:32px;height:2px;background:var(--ottone)}
-.passo p{font-size:16px}
+.passo p{font-size:17.5px}
 
 .attr{position:relative;background:var(--bianco);padding:24px;display:flex;gap:16px;align-items:flex-start;border-radius:var(--r);
       transition:transform 140ms ease-out, box-shadow 140ms ease-out}
 .attr div{display:flex;flex-direction:column;gap:6px}
-.attr p{font-size:16px}
+.attr p{font-size:17.5px}
 
 .slot{border:1px dashed var(--bordo);border-radius:var(--r);background:var(--avorio);padding:24px var(--gut);
       text-align:center;color:var(--segnaposto);font-size:12px;letter-spacing:.14em;text-transform:uppercase}
@@ -226,18 +227,20 @@ footer .w{padding-block:36px 16px}
   .btn:hover{transform:none}
 }
 @media (max-width:900px){
-  :root{--sez:32px}
-  h1{font-size:30px} h2{font-size:27px} h3{font-size:19px}
-  body{font-size:16px}
+  :root{--sez:32px;--gut:20px}
+  h1{font-size:30px} h2{font-size:28px} h3{font-size:20px}
+  body{font-size:17px}
   .hero{padding-block:48px 32px}
   .hero .occhiello{letter-spacing:.05em}
   .hero h1{font-size:min(30px, calc(7.6vw - 4px))}
   .chiusura h2{font-size:min(27px, calc(7.2vw - 4px))}
   .griglia3,.griglia4,.griglia2,.chiusura .w,.hero .w{grid-template-columns:1fr}
-  .lead,.hero p.sub{font-size:17px}
-  #problema h2{font-size:23px}
+  .lead,.hero p.sub,.testo{font-size:18px}
+  #problema h2{font-size:24px}
   #team h2{font-size:min(27px, calc((100vw - 52px) / 15));white-space:nowrap}
-  #problema .card p{font-size:14px}
+  .card p,.passo p,.attr p{font-size:17px}
+  .card h3,.passo h3,.attr h3{font-size:21px}
+  .griglia2-perche .attr p{font-size:16.5px}
   .nav{display:none}
   .nav-toggle{display:block;margin-right:-11px}
   /* logo, CTA e hamburger su una riga sola fino a 360px */
@@ -255,7 +258,7 @@ footer .w{padding-block:36px 16px}
      border:var(--fil) solid var(--rosso);border-radius:calc(var(--r) - var(--cor))}
 .catena{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:0 8px;align-items:center;justify-items:center}
 .catena .cella{text-align:center}
-.cella .et{font-size:11px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;
+.cella .et{font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase;
            color:var(--titolo);margin-bottom:4px;display:block}
 .cella.finale .et{color:var(--rosso)}
 .cella .val{font-family:var(--serif);font-weight:600;font-size:21px;line-height:1.1;color:var(--titolo);
@@ -319,7 +322,7 @@ footer .w{padding-block:36px 16px}
   .catena{grid-template-columns:1fr auto 1fr auto 1fr;gap:0 4px}
   .segno{font-size:15px;padding-top:0}
   .nota-a{text-align:left}
-  .cella .et{font-size:9.5px}
+  .cella .et{font-size:10.5px}
   .cella .val,.cella.finale .val{font-size:16px}
   .risultato .top{flex-direction:column;align-items:flex-start;gap:8px}
   .risultato .top .et{max-width:none}
