@@ -287,6 +287,9 @@ footer .w{padding-block:36px 16px}
   .calcolo .finale{grid-column:1 / -1;max-width:none;padding-top:12px;border-top:1px solid var(--bordo)}
   .catena.calcolo .finale .val{font-size:28px}
   .catena.calcolo .cella:not(.finale) .val{font-size:min(22px, 5.6vw)}
+  /* "Incasso annuo dalle OTA" su una riga: meno spaziatura fra lettere e meno margine dentro il riquadro */
+  .conto-a{padding:18px 12px}
+  .catena.calcolo label.et{white-space:nowrap;letter-spacing:.06em;font-size:min(10.5px, calc(3.7vw - 3.8px))}
   .calcolo input[type=range]{max-width:130px;height:4px;margin-top:12px}
   .calcolo input[type=range]::-webkit-slider-thumb{width:18px;height:18px}
 }
