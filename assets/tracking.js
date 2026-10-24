@@ -1,6 +1,8 @@
-/* Eventi GA4: clic_cta, sezione_vista, modulo_iniziato, modulo_abbandonato, generate_lead.
+/* Eventi GA4: clic_cta, clic_whatsapp, calcolatore_usato, sezione_vista, modulo_iniziato,
+   modulo_abbandonato, generate_lead.
    Un file solo caricato su index.html, modulo.html e grazie.html: ogni blocco si ferma
    da solo se non trova gli elementi che gli servono, così vale su tutte e tre le pagine.
+   Dal 24/10/2026 il modulo sta in fondo a index.html (sezione 08): modulo.html è nascosta.
    GA4 parte solo dopo il consenso (Iubenda blocca gtag.js finché l'utente non accetta):
    i listener si agganciano comunque subito, e solo al momento dell'evento si controlla
    se gtag esiste già. Se non esiste, l'evento si perde e basta: nessuna coda, nessun
@@ -12,7 +14,7 @@ function inviaEvento(nome, parametri) {
   else gtag('event', nome);
 }
 
-/* clic sulle CTA "Consulenza gratuita" (solo index.html, uniche con data-cta) */
+/* clic sulle CTA "Consulenza gratuita", che portano al modulo in fondo a index.html */
 (function(){
   var cta = document.querySelectorAll('[data-cta]');
   if (!cta.length) return;
@@ -21,6 +23,28 @@ function inviaEvento(nome, parametri) {
       inviaEvento('clic_cta', { posizione: this.getAttribute('data-cta') });
     });
   }
+})();
+
+/* clic sul bottone WhatsApp (sezione 08) */
+(function(){
+  var wa = document.querySelectorAll('[data-whatsapp]');
+  for (var i = 0; i < wa.length; i++) {
+    wa[i].addEventListener('click', function(){
+      inviaEvento('clic_whatsapp', { posizione: this.getAttribute('data-whatsapp') });
+    });
+  }
+})();
+
+/* calcolatore della sezione 02: una volta per visita, al primo spostamento di una barra */
+(function(){
+  var calc = document.getElementById('calcolo');
+  if (!calc) return;
+  var usato = false;
+  calc.addEventListener('change', function(){
+    if (usato) return;
+    usato = true;
+    inviaEvento('calcolatore_usato');
+  });
 })();
 
 /* sezione vista, una volta per sezione per visita (solo index.html) */
@@ -48,7 +72,7 @@ function inviaEvento(nome, parametri) {
   for (var i = 0; i < sezioni.length; i++) oss.observe(sezioni[i]);
 })();
 
-/* modulo_iniziato e modulo_abbandonato (solo modulo.html) */
+/* modulo_iniziato e modulo_abbandonato (modulo in fondo a index.html) */
 (function(){
   var form = document.getElementById('modulo-consulenza');
   if (!form) return;

@@ -22,7 +22,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <!-- schema JSON-LD: [da decidere] -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Source+Sans+3:wght@400;600&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=4">
+<link rel="stylesheet" href="assets/style.css?v=10">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
@@ -38,7 +38,7 @@
       <a href="index.html#perche-noi">Perché sceglierci</a>
     </nav>
     <div class="barra-azioni">
-      <a class="btn sm" href="modulo.html" data-cta="Barra in alto">Consulenza gratuita</a>
+      <a class="btn sm" href="#consulenza" data-cta="Barra in alto">Consulenza gratuita</a>
       <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-mobile" aria-label="Apri il menu">
         <span class="nav-toggle-bars" aria-hidden="true"></span>
       </button>
@@ -63,7 +63,7 @@
       <p class="occhiello">Per hotel e Bed and Breakfast</p>
       <h1>Sponsorizza la tua struttura. <br> Riempi le camere senza regalare commissioni.</h1>
       <p class="sub"><span>Quante camere regali a Booking ogni anno?</span> <span>Pagare il 17% alle OTA significa che ogni 6 camere che riempi, una intera serve solo a pagare loro.</span> <span>Riprenditi i tuoi ospiti e trovane di nuovi sfruttando il tuo canale diretto.</span></p>
-      <a class="btn" href="modulo.html" data-cta="Primo schermo">Consulenza gratuita</a>
+      <a class="btn" href="#consulenza" data-cta="Primo schermo">Consulenza gratuita</a>
     </div>
     <div class="slot-video">Slot video</div>
   </div>
@@ -102,12 +102,14 @@
       </div>
     </div>
     <div class="conto-a">
-      <div class="catena">
-        <div class="cella rivela"><span class="et">Incasso annuo dalle OTA</span><span class="val">520.000 €</span></div>
+      <div class="catena calcolo" id="calcolo">
+        <div class="cella rivela"><label class="et" for="calc-incasso">Incasso annuo dalle OTA</label><output class="val" for="calc-incasso">300.000 €</output>
+          <input type="range" id="calc-incasso" min="50000" max="3000000" step="10000" value="300000"></div>
         <div class="segno" aria-hidden="true">×</div>
-        <div class="cella rivela"><span class="et">Aliquota media</span><span class="val">17%</span></div>
+        <div class="cella rivela"><label class="et" for="calc-quota">Commissione media</label><output class="val" for="calc-quota">17%</output>
+          <input type="range" id="calc-quota" min="12" max="30" step="1" value="17"></div>
         <div class="segno" aria-hidden="true">=</div>
-        <div class="cella finale rivela"><span class="et">Commissioni pagate</span><span class="val">88.400 €</span></div>
+        <div class="cella finale rivela"><span class="et">Commissioni pagate ogni anno</span><output class="val" aria-live="polite">51.000 €</output></div>
       </div>
     </div>
   </div>
@@ -126,7 +128,7 @@
       <p><svg class="icona" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 3L7 18h8l-2 11 12-16h-8z"/></svg>Risultati immediati.</p>
       <p><svg class="icona" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.125" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 2h14M5 22h14"/><path d="M7 2v4.2a2 2 0 0 0 .6 1.4L12 12l4.4-4.4a2 2 0 0 0 .6-1.4V2M7 22v-4.2a2 2 0 0 1 .6-1.4L12 12l4.4 4.4a2 2 0 0 1 .6 1.4V22"/><path d="M9.5 19.5h5"/></svg>Non ti ruberà tempo.</p>
     </div>
-    <div class="rivela" style="margin-top:32px"><a class="btn" href="modulo.html" data-cta="La soluzione">Consulenza gratuita</a></div>
+    <div class="rivela" style="margin-top:32px"><a class="btn" href="#consulenza" data-cta="La soluzione">Consulenza gratuita</a></div>
   </div>
 </section>
 
@@ -175,7 +177,7 @@
         <div><h3>Selezione all'ingresso</h3><p style="text-wrap:pretty">Non accettiamo tutti: collaboriamo solo con strutture in cui troviamo potenziale.</p></div>
       </div>
     </div>
-    <div class="cta-riga rivela"><a class="btn" href="modulo.html" data-cta="Perché sceglierci">Consulenza gratuita</a></div>
+    <div class="cta-riga rivela"><a class="btn" href="#consulenza" data-cta="Perché sceglierci">Consulenza gratuita</a></div>
   </div>
 </section>
 
@@ -217,7 +219,7 @@
         <p>Dati concreti e verificabili: quanto budget è stato investito e che ritorno ha generato.</p>
       </div>
     </div>
-    <div class="cta-riga rivela"><a class="btn" href="modulo.html" data-cta="La garanzia">Consulenza gratuita</a></div>
+    <div class="cta-riga rivela"><a class="btn" href="#consulenza" data-cta="La garanzia">Consulenza gratuita</a></div>
   </div>
 </section>
 
@@ -228,27 +230,23 @@
       <p class="occhiello">Consulenza gratuita — senza impegno</p>
       <h2>I giorni passano.<br>Le commissioni si&nbsp;accumulano.<br>E il tuo guadagno?</h2>
       <p class="testo">Valutiamo la tua situazione, e al termine della consulenza ti prepariamo un piano studiato sulla tua struttura, poi la scelta di iniziare è tua, nessuna pressione.</p>
-      <a class="btn" href="modulo.html" data-cta="Chiusura">Consulenza gratuita</a>
+      <a class="btn-whatsapp" href="https://wa.me/393534769199" target="_blank" rel="noopener" data-whatsapp="Chiusura">
+        <svg viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zm-157 341.6c-33.2 0-65.7-8.9-94-25.7l-6.7-4-69.8 18.3L72 359.2l-4.4-7c-18.5-29.4-28.2-63.3-28.2-98.2 0-101.7 82.8-184.5 184.6-184.5 49.3 0 95.6 19.2 130.4 54.1 34.8 34.9 56.2 81.2 56.1 130.5 0 101.8-84.9 184.6-186.6 184.6zm101.2-138.2c-5.5-2.8-32.8-16.2-37.9-18-5.1-1.9-8.8-2.8-12.5 2.8-3.7 5.6-14.3 18-17.6 21.8-3.2 3.7-6.5 4.2-12 1.4-32.6-16.3-54-29.1-75.5-66-5.7-9.8 5.7-9.1 16.3-30.3 1.8-3.7.9-6.9-.5-9.7-1.4-2.8-12.5-30.1-17.1-41.2-4.5-10.8-9.1-9.3-12.5-9.5-3.2-.2-6.9-.2-10.6-.2-3.7 0-9.7 1.4-14.8 6.9-5.1 5.6-19.4 19-19.4 46.3 0 27.3 19.9 53.7 22.6 57.4 2.8 3.7 39.1 59.7 94.8 83.8 35.2 15.2 49 16.5 66.6 13.9 10.7-1.6 32.8-13.4 37.4-26.4 4.6-13 4.6-24.1 3.2-26.4-1.3-2.5-5-3.9-10.5-6.6z"/></svg>
+        WhatsApp
+      </a>
+      <p class="nota-whatsapp">Sentiti libero di scriverci se hai domande</p>
     </div>
     <div>
-      <div class="conto-b rivela">
-        <h3>Quanto lasci alle piattaforme, in un anno</h3>
-        <div class="righe">
-          <div class="riga"><span class="et">Fatturato annuo della struttura</span><span class="val">1.240.000 €</span></div>
-          <div class="riga"><span class="et">Quota generata dalle OTA</span><span class="val">65%</span></div>
-          <div class="riga"><span class="et">Commissione media applicata</span><span class="val">20%</span></div>
+      <form class="form-card rivela" id="modulo-consulenza">
+        <h3>È piuttosto semplice</h3>
+        <div class="campi-griglia">
+          <div class="campo"><input type="text" id="nome" name="nome" autocomplete="name" placeholder="Nome e cognome" aria-label="Nome e cognome" required></div>
+          <div class="campo"><input type="text" id="struttura" name="struttura" autocomplete="organization" placeholder="Nome della struttura" aria-label="Nome della struttura" required></div>
+          <div class="campo"><input type="tel" id="telefono" name="telefono" autocomplete="tel" placeholder="Telefono" aria-label="Telefono" required></div>
         </div>
-        <div class="risultato">
-          <div class="top">
-            <span class="et">Commissioni stimate ogni anno</span>
-            <span class="val">161.200 €</span>
-          </div>
-          <div class="giu">
-            <div><span class="et">Ogni mese</span><span class="val">13.433 €</span></div>
-            <div><span class="et">In cinque anni</span><span class="val">806.000 €</span></div>
-          </div>
-        </div>
-      </div>
+        <p class="errore-invio" hidden aria-live="polite"></p>
+        <button type="submit" class="btn pieno">Invia la richiesta</button>
+      </form>
     </div>
   </div>
 </section>
@@ -283,7 +281,6 @@
       <div class="f-parliamone">
         <p class="f-occhiello">Parliamone</p>
         <p class="f-invito">Ti diciamo subito se c'è utile recuperabile. Senza impegno.</p>
-        <a class="btn sm" href="modulo.html" data-cta="Fondo pagina">Consulenza gratuita</a>
       </div>
     </div>
     <div class="f-legale">
@@ -292,8 +289,13 @@
   </div>
 </footer>
 
-<script src="assets/app.js"></script>
-<script src="assets/tracking.js"></script>
+<script src="assets/app.js?v=6"></script>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+  emailjs.init({ publicKey: "1Fj-x2-x_BLhzPp30" });
+</script>
+<script src="assets/modulo.js?v=5"></script>
+<script src="assets/tracking.js?v=5"></script>
 <script type="text/javascript">(function (w,d) {var loader = function () {var s = d.createElement("script"), tag = d.getElementsByTagName("script")[0]; s.src="https://cdn.iubenda.com/iubenda.js"; tag.parentNode.insertBefore(s,tag);}; if(w.addEventListener){w.addEventListener("load", loader, false);}else if(w.attachEvent){w.attachEvent("onload", loader);}else{w.onload = loader;}})(window, document);</script>
 
 </body>

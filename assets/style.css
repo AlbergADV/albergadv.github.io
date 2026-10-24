@@ -126,8 +126,10 @@ html{scroll-padding-top:90px}
       transition:transform 140ms ease-out, box-shadow 140ms ease-out}
 .griglia4 .passo{aspect-ratio:auto}
 @media (max-width:900px){.passo{aspect-ratio:auto}}
-.passo .n{font-family:var(--serif);font-size:15px;color:var(--ottone);font-weight:600;
+.passo .n{font-family:var(--serif);font-size:15px;color:var(--ottone);font-weight:600;white-space:nowrap;
           font-variant-numeric:tabular-nums}
+/* etichette su una riga sul computer; fra 901 e 1100px i riquadri sono troppo stretti e vanno a capo */
+@media (min-width:901px) and (max-width:1100px){.passo .n{white-space:normal}}
 .passo h3{position:relative;padding-bottom:12px}
 .passo h3::after{content:"";position:absolute;left:0;bottom:0;width:32px;height:2px;background:var(--ottone)}
 .passo p{font-size:16px}
@@ -147,12 +149,15 @@ html{scroll-padding-top:90px}
 .persona{display:flex;flex-direction:column;gap:12px}
 .persona span{font-size:13px;color:var(--segnaposto)}
 
-.attrib-riga{display:flex;justify-content:space-between;gap:24px}
-.attrib-riga p{color:var(--titolo);
-     font-family:var(--serif);font-weight:600;font-size:21px;line-height:1.22;white-space:nowrap;
-     padding-block:14px;display:flex;align-items:center;gap:12px}
-@media (max-width:1000px){.attrib-riga p{font-size:16px}}
-@media (max-width:820px){.attrib-riga{flex-direction:column;gap:8px}.attrib-riga p{white-space:normal}}
+.attrib-riga{display:flex;gap:16px 20px;align-items:flex-start}
+/* pillole: stesso bordino interno dei box (.card), ma con i lati tondi */
+.attrib-riga p{position:relative;background:var(--bianco);border-radius:999px;padding:12px 28px 12px 22px;color:var(--titolo);
+     font-family:var(--serif);font-weight:600;font-size:19px;line-height:1.22;white-space:nowrap;
+     display:flex;align-items:center;gap:12px}
+.attrib-riga p::after{content:"";position:absolute;inset:var(--cor);pointer-events:none;
+     border:1.5px solid var(--ottone);border-radius:999px}
+@media (max-width:1050px){.attrib-riga{column-gap:12px}.attrib-riga p{font-size:16px}}
+@media (max-width:960px){.attrib-riga{flex-direction:column;gap:10px}.attrib-riga p{white-space:normal}}
 .cta-riga{margin-top:40px;display:flex;justify-content:center}
 
 .chiusura .w{display:grid;grid-template-columns:1.1fr .9fr;gap:44px;align-items:center}
@@ -258,6 +263,21 @@ footer .w{padding-block:36px 16px}
 .segno{font-family:var(--serif);font-size:19px;color:var(--titolo);line-height:1;padding-top:16px;
        user-select:none}
 .nota-a{margin-top:14px;font-size:15px;text-align:right}
+/* calcolatore (sezione 02, dal 24/10/2026): stessa catena, con una barra sotto i due valori */
+.calcolo .cella{width:100%;max-width:300px}
+.calcolo label.et{cursor:pointer}
+.calcolo output{display:block}
+.calcolo input[type=range]{-webkit-appearance:none;appearance:none;width:100%;max-width:220px;height:3px;margin:12px auto 0;
+     display:block;background:var(--bordo);border-radius:2px;cursor:pointer}
+.calcolo input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;
+     background:var(--bianco);border:var(--fil) solid var(--ottone)}
+.calcolo input[type=range]::-moz-range-thumb{width:10px;height:10px;border-radius:50%;background:var(--bianco);border:var(--fil) solid var(--ottone)}
+.calcolo input[type=range]:focus-visible{outline:2px solid var(--ottone);outline-offset:4px}
+.calcolo .segno{padding-top:0}
+@media (max-width:700px){
+  .catena.calcolo{grid-template-columns:1fr;gap:14px}
+  .calcolo .cella{max-width:none}
+}
 .catena .rivela.in:nth-child(3){animation-delay:100ms}
 .catena .rivela.in:nth-child(5){animation-delay:220ms}
 
@@ -335,6 +355,12 @@ footer .w{padding-block:36px 16px}
      background-repeat:no-repeat;background-position:right 16px center;background-size:16px;
      background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23187C31' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E")}
 .campo select:invalid{color:var(--segnaposto)}
+
+/* modulo dentro la sezione 08 (dal 24/10/2026): titolo, tre campi senza etichetta sopra */
+.chiusura .form-card h3{margin:0}
+.chiusura .btn-whatsapp{font-size:17px;padding:12px 24px}
+.chiusura .btn-whatsapp svg{width:22px;height:22px}
+.chiusura .nota-whatsapp{font-size:13px;color:var(--segnaposto);margin-top:-8px}
 
 .errore-invio{font-size:14px;line-height:1.4;color:var(--corpo);margin:0}
 

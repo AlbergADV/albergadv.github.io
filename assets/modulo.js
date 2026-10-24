@@ -52,19 +52,16 @@
 
     var clic = codiciClic();
 
-    if (typeof gtag === 'function') {
-      var datiUtente = { email: form.email.value.replace(/\s/g, '').toLowerCase() };
-      var tel = telefonoE164(form.telefono.value);
-      if (tel) datiUtente.phone_number = tel;
-      gtag('set', 'user_data', datiUtente);
-    }
+    var tel = telefonoE164(form.telefono.value);
+    if (typeof gtag === 'function' && tel) gtag('set', 'user_data', { phone_number: tel });
 
+    /* dal 24/10/2026 il modulo chiede solo nome, struttura e telefono: email e urgenza partono vuote */
     emailjs.send('service_c8rmxaa', 'template_1dsucfr', {
       nome: form.nome.value,
       struttura: form.struttura.value,
-      email: form.email.value,
+      email: '',
       telefono: form.telefono.value,
-      urgenza: form.urgenza.value,
+      urgenza: '',
       gclid: clic.gclid,
       gbraid: clic.gbraid,
       wbraid: clic.wbraid,
@@ -75,7 +72,7 @@
       bottone.disabled = false;
       bottone.textContent = testoBottone;
       if (erroreEl) {
-        erroreEl.textContent = 'Qualcosa non ha funzionato, riprova o scrivici a [email da inserire].';
+        erroreEl.textContent = 'Qualcosa non ha funzionato, riprova o scrivici a info@alberg-adv.com.';
         erroreEl.hidden = false;
       }
     });

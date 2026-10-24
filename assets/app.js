@@ -40,6 +40,23 @@
   for (var i=0;i<box.length;i++) oss.observe(box[i]);
 })();
 
+/* calcolatore delle commissioni (sezione 02): incasso dalle OTA × commissione media */
+(function(){
+  var incasso = document.getElementById('calc-incasso');
+  var quota = document.getElementById('calc-quota');
+  if (!incasso || !quota) return;
+  var uscite = document.querySelectorAll('#calcolo output');
+  function euro(n){ return Math.round(n).toLocaleString('it-IT') + ' €'; }
+  function aggiorna(){
+    uscite[0].textContent = euro(+incasso.value);
+    uscite[1].textContent = quota.value + '%';
+    uscite[2].textContent = euro(incasso.value * quota.value / 100);
+  }
+  incasso.addEventListener('input', aggiorna);
+  quota.addEventListener('input', aggiorna);
+  aggiorna();
+})();
+
 /* menu mobile della barra alta */
 (function(){
   var toggle = document.querySelector('.nav-toggle');
