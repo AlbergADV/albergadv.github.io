@@ -22,7 +22,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <!-- schema JSON-LD: [da decidere] -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=Source+Sans+3:wght@400;600&display=swap">
-<link rel="stylesheet" href="assets/style.css?v=33">
+<link rel="stylesheet" href="assets/style.css?v=36">
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 </head>
@@ -105,8 +105,10 @@
       <div class="catena calcolo" id="calcolo">
         <div class="cella rivela"><label class="et" for="calc-incasso">Incasso annuo dalle OTA</label><output class="val" for="calc-incasso">300.000 €</output>
           <input type="range" id="calc-incasso" min="50000" max="3000000" step="10000" value="300000"></div>
+        <div class="segno" aria-hidden="true">×</div>
         <div class="cella rivela"><label class="et" for="calc-quota">Commissione media</label><output class="val" for="calc-quota">17%</output>
           <input type="range" id="calc-quota" min="12" max="30" step="1" value="17"></div>
+        <div class="segno" aria-hidden="true">=</div>
         <div class="cella finale rivela"><span class="et">Commissioni pagate ogni anno</span><output class="val" aria-live="polite">51.000 €</output></div>
       </div>
     </div>
